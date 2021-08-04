@@ -30,6 +30,8 @@ const Seo = ({ description = '', title = '', name = '', keyword = '', url = '', 
                 href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
                 integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
                 crossOrigin="anonymous"></link>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         </Helmet>
     );
 };

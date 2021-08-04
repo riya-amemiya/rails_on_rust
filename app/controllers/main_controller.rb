@@ -13,4 +13,7 @@ class MainController < ApplicationController
     puts(Rust::pow(8))
     @python = o
   end
+
+  def home
+  end
 end
