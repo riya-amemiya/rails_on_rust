@@ -38,4 +38,4 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Build
-              run: cargo build --release && python setup.py build_ext --inplace
+              run: cargo build --release
