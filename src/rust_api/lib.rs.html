@@ -118,6 +118,7 @@
 <span id="116">116</span>
 <span id="117">117</span>
 <span id="118">118</span>
+<span id="119">119</span>
 </pre><pre class="rust">
 <span class="doccomment">//! all_programming_net</span>
 <span class="doccomment">//! # Document</span>
@@ -132,6 +133,7 @@
 <span class="attribute">#[<span class="ident">test</span>]</span>
 <span class="kw">fn</span> <span class="ident">pow_test</span>() {
     <span class="macro">assert_eq!</span>(<span class="ident">pow</span>(<span class="number">8</span>), <span class="number">64</span>);
+    <span class="macro">assert_eq!</span>(<span class="ident">pow</span>(<span class="number">5</span>), <span class="number">25</span>)
 }
 <span class="doccomment">///xとyの最大公約数</span>
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
@@ -153,7 +155,7 @@
         <span class="ident">x</span> <span class="op">=</span> <span class="ident">r</span>;
         <span class="ident">r</span> <span class="op">=</span> <span class="ident">y</span> <span class="op">%</span> <span class="ident">x</span>;
     }
-    <span class="ident">x</span>
+    <span class="kw">return</span> <span class="ident">x</span>;
 }
 <span class="attribute">#[<span class="ident">test</span>]</span>
 <span class="kw">fn</span> <span class="ident">gcd_test</span>() {
@@ -171,7 +173,7 @@
         <span class="ident">y</span> <span class="op">=</span> <span class="ident">x</span>;
         <span class="ident">x</span> <span class="op">=</span> <span class="ident">tmp</span>;
     }
-    (<span class="ident">x</span> <span class="op">/</span> <span class="ident">gcd</span>(<span class="ident">x</span>, <span class="ident">y</span>)) <span class="op">*</span> <span class="ident">y</span>
+    <span class="kw">return</span> (<span class="ident">x</span> <span class="op">/</span> <span class="ident">gcd</span>(<span class="ident">x</span>, <span class="ident">y</span>)) <span class="op">*</span> <span class="ident">y</span>;
 }
 <span class="attribute">#[<span class="ident">test</span>]</span>
 <span class="kw">fn</span> <span class="ident">lcm_test</span>() {
@@ -184,9 +186,9 @@
         <span class="kw">if</span> <span class="ident">y</span> <span class="op">=</span><span class="op">=</span> <span class="number">0</span> {
             <span class="kw">return</span> <span class="number">0</span>;
         }
-        <span class="number">1</span>
+        <span class="kw">return</span> <span class="number">1</span>;
     } <span class="kw">else</span> {
-        <span class="ident">x</span> <span class="op">*</span> <span class="ident">fact</span>(<span class="ident">x</span> <span class="op">-</span> <span class="number">1</span>, <span class="ident">y</span>)
+        <span class="kw">return</span> <span class="ident">x</span> <span class="op">*</span> <span class="ident">fact</span>(<span class="ident">x</span> <span class="op">-</span> <span class="number">1</span>, <span class="ident">y</span>);
     }
 }
 <span class="attribute">#[<span class="ident">test</span>]</span>
@@ -222,7 +224,7 @@
     <span class="kw">let</span> <span class="ident">resp</span> <span class="op">=</span>
         <span class="ident">reqwest::blocking::get</span>(<span class="string">&quot;https://httpbin.org/ip&quot;</span>)<span class="question-mark">?</span>.<span class="ident">json</span>::<span class="op">&lt;</span><span class="ident">HashMap</span><span class="op">&lt;</span><span class="ident">String</span>, <span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>()<span class="question-mark">?</span>;
     <span class="macro">println!</span>(<span class="string">&quot;{:#?}&quot;</span>, <span class="ident">resp</span>[<span class="string">&quot;origin&quot;</span>]);
-    <span class="prelude-val">Ok</span>(())
+    <span class="kw">return</span> <span class="prelude-val">Ok</span>(());
 }
 <span class="doccomment">/// c呼び出し</span>
 <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> {
