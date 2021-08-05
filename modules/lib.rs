@@ -11,6 +11,7 @@ pub extern "C" fn pow(x: i32) -> i32 {
 #[test]
 fn pow_test() {
     assert_eq!(pow(8), 64);
+    assert_eq!(pow(5), 25)
 }
 ///xとyの最大公約数
 #[no_mangle]
@@ -32,7 +33,7 @@ pub extern "C" fn gcd(mut x: i32, mut y: i32) -> i32 {
         x = r;
         r = y % x;
     }
-    x
+    return x;
 }
 #[test]
 fn gcd_test() {
@@ -50,7 +51,7 @@ pub extern "C" fn lcm(mut x: i32, mut y: i32) -> i32 {
         y = x;
         x = tmp;
     }
-    (x / gcd(x, y)) * y
+    return (x / gcd(x, y)) * y;
 }
 #[test]
 fn lcm_test() {
@@ -63,9 +64,9 @@ pub extern "C" fn fact(x: i32, y: i32) -> i32 {
         if y == 0 {
             return 0;
         }
-        1
+        return 1;
     } else {
-        x * fact(x - 1, y)
+        return x * fact(x - 1, y);
     }
 }
 #[test]
@@ -101,7 +102,7 @@ pub fn ajax() -> Result<(), Box<dyn std::error::Error>> {
     let resp =
         reqwest::blocking::get("https://httpbin.org/ip")?.json::<HashMap<String, String>>()?;
     println!("{:#?}", resp["origin"]);
-    Ok(())
+    return Ok(());
 }
 /// c呼び出し
 extern "C" {

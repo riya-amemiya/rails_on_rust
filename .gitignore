@@ -42,3 +42,5 @@ yarn-debug.log*
 Cargo.lock
 target
 *.so
+
+.DS_Store
