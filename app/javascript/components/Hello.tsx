@@ -4,9 +4,8 @@ import styled from 'styled-components';
 import { Props } from './@types';
 import Button from '@material-ui/core/Button';
 const Hello = (props: Props) => {
-    const python = props.python;
     console.log('====================================');
-    console.log(python);
+    console.log(props);
     console.log('====================================');
     const CENTER = styled.div`
         text-align: center;
