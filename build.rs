@@ -2,6 +2,10 @@ extern crate cc;
 
 fn main() {
     cc::Build::new()
+        .warnings(true)
+        .flag("-Wall")
+        .flag("-Wextra")
+        .flag("-g")
         // .cpp(true)
         .file("modules/c/foo.c")
         .include("modules")

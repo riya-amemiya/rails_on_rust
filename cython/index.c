@@ -949,6 +949,7 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'python_modules' */
 static PyObject *__pyx_f_14python_modules_c_pow(PyObject *, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_14python_modules_c_add(PyObject *, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "python_modules"
 extern int __pyx_module_is_main_python_modules;
 int __pyx_module_is_main_python_modules = 0;
@@ -961,11 +962,13 @@ static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_pf_14python_modules_c_pow(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x); /* proto */
+static PyObject *__pyx_pf_14python_modules_2c_add(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x); /* proto */
 /* Late includes */
 
 /* "cython/index.pyx":1
  * cpdef c_pow(x):             # <<<<<<<<<<<<<<
- *     return x * x
+ *     return x * x;
+ * cpdef c_add(x):
  */
 
 static PyObject *__pyx_pw_14python_modules_1c_pow(PyObject *__pyx_self, PyObject *__pyx_v_x); /*proto*/
@@ -977,7 +980,9 @@ static PyObject *__pyx_f_14python_modules_c_pow(PyObject *__pyx_v_x, CYTHON_UNUS
 
   /* "cython/index.pyx":2
  * cpdef c_pow(x):
- *     return x * x             # <<<<<<<<<<<<<<
+ *     return x * x;             # <<<<<<<<<<<<<<
+ * cpdef c_add(x):
+ *     return x + x;
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyNumber_Multiply(__pyx_v_x, __pyx_v_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
@@ -988,7 +993,8 @@ static PyObject *__pyx_f_14python_modules_c_pow(PyObject *__pyx_v_x, CYTHON_UNUS
 
   /* "cython/index.pyx":1
  * cpdef c_pow(x):             # <<<<<<<<<<<<<<
- *     return x * x
+ *     return x * x;
+ * cpdef c_add(x):
  */
 
   /* function exit code */
@@ -1038,8 +1044,89 @@ static PyObject *__pyx_pf_14python_modules_c_pow(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
+/* "cython/index.pyx":3
+ * cpdef c_pow(x):
+ *     return x * x;
+ * cpdef c_add(x):             # <<<<<<<<<<<<<<
+ *     return x + x;
+ */
+
+static PyObject *__pyx_pw_14python_modules_3c_add(PyObject *__pyx_self, PyObject *__pyx_v_x); /*proto*/
+static PyObject *__pyx_f_14python_modules_c_add(PyObject *__pyx_v_x, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("c_add", 0);
+
+  /* "cython/index.pyx":4
+ *     return x * x;
+ * cpdef c_add(x):
+ *     return x + x;             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyNumber_Add(__pyx_v_x, __pyx_v_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "cython/index.pyx":3
+ * cpdef c_pow(x):
+ *     return x * x;
+ * cpdef c_add(x):             # <<<<<<<<<<<<<<
+ *     return x + x;
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("python_modules.c_add", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_14python_modules_3c_add(PyObject *__pyx_self, PyObject *__pyx_v_x); /*proto*/
+static PyObject *__pyx_pw_14python_modules_3c_add(PyObject *__pyx_self, PyObject *__pyx_v_x) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("c_add (wrapper)", 0);
+  __pyx_r = __pyx_pf_14python_modules_2c_add(__pyx_self, ((PyObject *)__pyx_v_x));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_14python_modules_2c_add(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("c_add", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_14python_modules_c_add(__pyx_v_x, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("python_modules.c_add", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 static PyMethodDef __pyx_methods[] = {
   {"c_pow", (PyCFunction)__pyx_pw_14python_modules_1c_pow, METH_O, 0},
+  {"c_add", (PyCFunction)__pyx_pw_14python_modules_3c_add, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -1338,7 +1425,8 @@ if (!__Pyx_RefNanny) {
 
   /* "cython/index.pyx":1
  * cpdef c_pow(x):             # <<<<<<<<<<<<<<
- *     return x * x
+ *     return x * x;
+ * cpdef c_add(x):
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

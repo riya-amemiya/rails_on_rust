@@ -3,10 +3,21 @@ import Layout from './templates/Layout';
 import styled from 'styled-components';
 import { Props } from './@types';
 import Button from '@material-ui/core/Button';
+import { GET_URL } from './modules';
 const Hello = (props: Props) => {
     console.log('====================================');
-    console.log(props);
+    console.log(props.python);
     console.log('====================================');
+    const a = GET_URL();
+    if (a) {
+        fetch(`${a.origin}/api`)
+            .then((n) => n.json())
+            .then((n: any) => {
+                console.log('====================================');
+                console.log(n.data);
+                console.log('====================================');
+            });
+    }
     const CENTER = styled.div`
         text-align: center;
     `;

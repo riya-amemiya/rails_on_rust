@@ -23,14 +23,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
-    <%= javascript_pack_tag 'application' %>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" %>
+    <%= javascript_pack_tag "application" %>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css"     %>
 </head>
 
-<body>
+<body style="margin: 0px;">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK2VKFP" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-    <%= yield %>
+    <div id="main">
+        <%= yield %>
+    </div>
 </body>
 
 </html>
