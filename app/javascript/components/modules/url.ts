@@ -1,5 +1,6 @@
+import { API } from '../api';
 const GET_URL = () => {
-    if (window && location) {
+    if (API.check_window()) {
         return location;
     }
     return '';

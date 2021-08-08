@@ -18,3 +18,7 @@ cc = {version = "1.0", features = ["parallel"]}
 crate-type = ["cdylib"]
 name = "rust_api"
 path = "modules/lib.rs"
+
+[[bin]]
+name = "main"
+path = "modules/main.rs"

@@ -1,5 +1,5 @@
 import React from 'react';
-const Header = () => {
-    return <header></header>;
+const Header = ({ children }: { children: React.ReactNode }) => {
+    return <>{children}</>;
 };
 export default Header;

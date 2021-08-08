@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { API } from '../api';
 import Footer from './Footer';
 import Header from './Header';
 import Seo from './Seo';
@@ -19,6 +20,8 @@ interface Props {
     };
     id?: string;
     language?: string;
+    header?: React.ReactNode;
+    footer?: React.ReactNode;
 }
 const Layout = ({
     children,
@@ -36,10 +39,14 @@ const Layout = ({
     },
     id = '',
     language = 'ja',
+    header = <></>,
+    footer = <></>,
 }: Props): JSX.Element => {
     const [pathName, setPathName] = useState('');
     useEffect(() => {
-        setPathName(location.pathname);
+        if (API.check_window()) {
+            setPathName(location.pathname);
+        }
     }, []);
     const DIV = styled.div`
         font-family: source-han-sans-japanese, sans-serif;
@@ -48,7 +55,7 @@ const Layout = ({
     `;
     return (
         <>
-            <Header />
+            <Header children={<header>{header}</header>} />
             <Seo description={description} title={title} name={name} keyword={keyword} url={pathName} language={language} />
             <style>
                 {`
@@ -63,7 +70,7 @@ const Layout = ({
                     {children}
                 </main>
             </DIV>
-            <Footer />
+            <Footer children={<footer>{footer}</footer>} />
         </>
     );
 };

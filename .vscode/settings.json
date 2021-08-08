@@ -1,3 +1,9 @@
 {
-    "kvlang.pythonPath": "python"
+    "kvlang.pythonPath": "python",
+    "Lua.diagnostics.globals": [
+        "a"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ]
 }

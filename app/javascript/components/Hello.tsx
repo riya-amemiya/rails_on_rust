@@ -3,20 +3,22 @@ import Layout from './templates/Layout';
 import styled from 'styled-components';
 import { Props } from './@types';
 import Button from '@material-ui/core/Button';
-import { GET_URL } from './modules';
+import { CLASS_MODULES } from './modules';
 const Hello = (props: Props) => {
     console.log('====================================');
     console.log(props.python);
     console.log('====================================');
-    const a = GET_URL();
+    const MODULES = new CLASS_MODULES();
+    const a = MODULES.get_url;
     if (a) {
-        fetch(`${a.origin}/api`)
-            .then((n) => n.json())
-            .then((n: any) => {
+        MODULES.fetch({
+            url: `${a.origin}/api`,
+            callback: (n: { data: string }) => {
                 console.log('====================================');
                 console.log(n.data);
                 console.log('====================================');
-            });
+            },
+        });
     }
     const CENTER = styled.div`
         text-align: center;
