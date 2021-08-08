@@ -1,1 +1,1 @@
-window.ALL_CRATES = ["rust_api"];
+window.ALL_CRATES = ["main","rust_api"];
