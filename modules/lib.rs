@@ -3,6 +3,7 @@
 //! プログラミング言語の壁を超えろ
 
 mod os;
+
 ///xの二乗
 #[no_mangle]
 pub extern "C" fn pow(x: i32) -> i32 {
