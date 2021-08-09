@@ -10,4 +10,9 @@ module Rust
 end
 
 class ApplicationController < ActionController::Base
+  def rails_to_react(name)
+    return{
+            name: name,
+          }
+  end
 end

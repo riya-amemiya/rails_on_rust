@@ -10,3 +10,7 @@ extern "C" {
 pub fn greet(name: &str) {
     alert(name);
 }
+#[wasm_bindgen]
+pub fn pow(x: i32) -> i32 {
+    return x * x;
+}

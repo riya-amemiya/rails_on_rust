@@ -1,7 +1,7 @@
 import GET_URL from './url';
-class CLASS_MODULES {
+class MODULES {
     private url = GET_URL;
-    fetch({ url, callback }: { url: string; callback: (data: any) => any }) {
+    fetch(url: string, callback: (data: any) => any) {
         fetch(url)
             .then((n) => n.json())
             .then(<T>(n: T) => {
@@ -13,4 +13,4 @@ class CLASS_MODULES {
     }
 }
 
-export { CLASS_MODULES };
+export { MODULES };

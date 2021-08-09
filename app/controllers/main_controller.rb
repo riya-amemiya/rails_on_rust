@@ -6,6 +6,7 @@ class MainController < ApplicationController
     puts(Rust::k(9))
     @python = o
     @rust = Rust::pow(8)
+    @data = rails_to_react("index")
   end
 
   def home
