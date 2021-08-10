@@ -1,4 +1,5 @@
 require "ffi"
+require "date"
 
 module Rust
   extend FFI::Library
@@ -11,8 +12,20 @@ end
 
 class ApplicationController < ActionController::Base
   def rails_to_react(name)
+    day = Date.today
+    time = DateTime.now
     return{
             name: name,
+            time: {
+              hour: time.hour,
+              minute: time.minute,
+              second: time.second,
+            },
+            day: {
+              year: day.year,
+              month: day.month,
+              day: day.day,
+            },
           }
   end
 end

@@ -23,6 +23,9 @@ interface Props {
     header?: React.ReactNode;
     footer?: React.ReactNode;
 }
+const Main = React.memo((props: { component: React.ReactNode }) => {
+    return <>{props.component}</>;
+});
 const Layout = ({
     children,
     description = '',
@@ -67,7 +70,7 @@ const Layout = ({
             </style>
             <DIV className="_Layout-div" style={style.div}>
                 <main className="_Layout-main" style={style.main} id={id}>
-                    {children}
+                    <Main component={children} />
                 </main>
             </DIV>
             <Footer children={<footer>{footer}</footer>} />
