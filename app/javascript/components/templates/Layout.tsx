@@ -20,8 +20,6 @@ interface Props {
     };
     id?: string;
     language?: string;
-    header?: React.ReactNode;
-    footer?: React.ReactNode;
 }
 const Main = React.memo((props: { component: React.ReactNode }) => {
     return <>{props.component}</>;
@@ -42,8 +40,6 @@ const Layout = ({
     },
     id = '',
     language = 'ja',
-    header = <></>,
-    footer = <></>,
 }: Props): JSX.Element => {
     const [pathName, setPathName] = useState('');
     useEffect(() => {
@@ -58,7 +54,7 @@ const Layout = ({
     `;
     return (
         <>
-            <Header children={<header>{header}</header>} />
+            <Header />
             <Seo description={description} title={title} name={name} keyword={keyword} url={pathName} language={language} />
             <style>
                 {`
@@ -73,7 +69,7 @@ const Layout = ({
                     <Main component={children} />
                 </main>
             </DIV>
-            <Footer children={<footer>{footer}</footer>} />
+            <Footer />
         </>
     );
 };

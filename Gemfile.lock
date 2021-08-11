@@ -108,6 +108,7 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.7-x86_64-darwin)
       racc (~> 1.4)
+    pg (1.2.3)
     public_suffix (4.0.6)
     puma (5.4.0)
       nio4r (~> 2.0)
@@ -221,6 +222,7 @@ DEPENDENCIES
   ffi
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pg
   puma (~> 5.0)
   pycall
   rack-mini-profiler (~> 2.0)
@@ -229,7 +231,7 @@ DEPENDENCIES
   sass-rails
   selenium-webdriver
   spring
-  sqlite3 (~> 1.4)
+  sqlite3
   tailwindcss-rails
   turbolinks (~> 5)
   tzinfo-data

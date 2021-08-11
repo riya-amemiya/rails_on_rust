@@ -1,7 +1,4 @@
-extern crate wasm_bindgen;
-
 use wasm_bindgen::prelude::*;
-
 #[macro_use]
 extern crate serde_derive;
 extern crate serde;
@@ -24,6 +21,5 @@ pub struct RUST {
 }
 #[wasm_bindgen]
 pub fn rust(x: i32) -> String {
-    let n = RUST { name: x };
-    return serde_json::to_string(&n).unwrap();
+    return serde_json::to_string(&RUST { name: x }).unwrap();
 }

@@ -1,5 +1,13 @@
+import { AppBar } from '@material-ui/core';
 import React from 'react';
-const Header = ({ children }: { children: React.ReactNode }) => {
-    return <>{children}</>;
+const Header = () => {
+    return (
+        <>
+            <AppBar>
+                <div>header</div>
+            </AppBar>
+            ;
+        </>
+    );
 };
 export default Header;

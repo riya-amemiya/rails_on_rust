@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = ({ children }: { children: React.ReactNode }) => {
-    return <>{children}</>;
+const Footer = () => {
+    return <footer></footer>;
 };
 export default Footer;

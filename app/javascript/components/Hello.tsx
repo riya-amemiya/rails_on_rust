@@ -5,7 +5,8 @@ import { Props } from './@types';
 import Button from '@material-ui/core/Button';
 //import { MODULES } from './modules';
 import { Rust } from './api';
-const Hello = (_props: Props) => {
+const Main = React.memo(({ props }: { props: Props }) => {
+    console.log(props);
     const CENTER = styled.div`
         text-align: center;
     `;
@@ -31,5 +32,9 @@ const Hello = (_props: Props) => {
             </CENTER>
         </Layout>
     );
+    return <></>;
+});
+const Hello = (_props: Props) => {
+    return <Main props={_props} />;
 };
 export default Hello;
