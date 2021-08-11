@@ -11,6 +11,12 @@ python_build:
 
 .PHONY: rust_build
 rust_build:
+	make rust_fix
 	cargo test
 	cargo build --release
 
+.PHONY: rust_fix
+rust_fix:
+	cargo install cargo-audit
+	cargo install cargo-audit --features=fix
+	cargo audit fix
