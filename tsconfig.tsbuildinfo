@@ -236,14 +236,14 @@
         "signature": "0ed85405cd938f063631014045501243a4a513e382666a5b1e585bda6bab02fd",
         "affectsGlobalScope": false
       },
-      "./wasm/pkg/wasm.d.ts": {
+      "./app/javascript/wasm/pkg/wasm.d.ts": {
         "version": "94433ff09addc767733d41e63a89e39a50184a6106785c1ba2b24e32f7a78fe3",
         "signature": "94433ff09addc767733d41e63a89e39a50184a6106785c1ba2b24e32f7a78fe3",
         "affectsGlobalScope": false
       },
       "./app/javascript/components/api/index.ts": {
-        "version": "90c1f06c406b267c4e7f1f4f5d46380a9edff768db18b2521dcad4f86eac0bb0",
-        "signature": "9a6f64cd8ff624a1528a76457fd52e56ffb90febceeac793f016c6cf78fb4454",
+        "version": "ea2c7475eb330d234813e6c22a8b2a5f01910aa474758d68c40b901e47195793",
+        "signature": "044f17c854beadfcbe18e0808f505e32b824778484bff745fbf40c15bfd5c494",
         "affectsGlobalScope": false
       },
       "./app/javascript/components/templates/footer.tsx": {
@@ -2053,12 +2053,12 @@
       },
       "./app/javascript/components/modules/url.ts": {
         "version": "e416eafe5a4924ca0f90fec32fd58c0193536d216f7b6fb2cf68d530a92850a4",
-        "signature": "e84dbc4e365fd94b175edb4f6d6cd89f9c91f5d3b9654492f5997ce4689ea2ad",
+        "signature": "df34606090504b53d72d53e1b535acd4e0a699f46f0b1e6329af5c23b51ae634",
         "affectsGlobalScope": false
       },
       "./app/javascript/components/modules/index.ts": {
         "version": "c1e0d9fb0374987ddd13f0b0d2418b22e911d3199aaca08f483bc6806a6d7744",
-        "signature": "fc26b4f9b1e4b177afac5b43119fda108d9e44cd3fd04663c106698962323c21",
+        "signature": "9d4030aca7d1d9eae9f114c7577c817765afdf400c0cd1ac37f5b655f7404364",
         "affectsGlobalScope": false
       },
       "./app/javascript/packs/hello_typescript.ts": {
@@ -2066,7 +2066,7 @@
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": true
       },
-      "./wasm/pkg/wasm_bg.wasm.d.ts": {
+      "./app/javascript/wasm/pkg/wasm_bg.wasm.d.ts": {
         "version": "c8d98f028da0ed73bc582a3aab4e1f163a62e341ce3cb854a3295ffab089f861",
         "signature": "c8d98f028da0ed73bc582a3aab4e1f163a62e341ce3cb854a3295ffab089f861",
         "affectsGlobalScope": false
@@ -2654,8 +2654,8 @@
       ],
       "./app/javascript/components/api/index.ts": [
         "./app/javascript/components/api/check_window.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./wasm/pkg/wasm.d.ts"
+        "./app/javascript/wasm/pkg/wasm.d.ts",
+        "./node_modules/@types/node/util.d.ts"
       ],
       "./app/javascript/components/hello.tsx": [
         "./app/javascript/components/@types/index.d.ts",
@@ -2698,6 +2698,12 @@
         "./node_modules/@types/react/index.d.ts"
       ],
       "./app/javascript/packs/hello_typescript.ts": [
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./app/javascript/wasm/pkg/wasm.d.ts": [
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./app/javascript/wasm/pkg/wasm_bg.wasm.d.ts": [
         "./node_modules/@types/node/util.d.ts"
       ],
       "./node_modules/@material-ui/core/accordion/accordion.d.ts": [
@@ -5139,12 +5145,6 @@
         "./node_modules/csstype/index.d.ts"
       ],
       "./node_modules/popper.js/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./wasm/pkg/wasm.d.ts": [
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./wasm/pkg/wasm_bg.wasm.d.ts": [
         "./node_modules/@types/node/util.d.ts"
       ],
       "../../../../node_modules/@types/hast/index.d.ts": [
@@ -5346,13 +5346,19 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "./app/javascript/components/api/index.ts": [
-        "./wasm/pkg/wasm.d.ts"
+        "./app/javascript/wasm/pkg/wasm.d.ts"
       ],
       "./app/javascript/components/hello.tsx": [
         "./app/javascript/components/@types/index.d.ts"
       ],
       "./app/javascript/components/templates/layout.tsx": [
         "./node_modules/@types/react/index.d.ts"
+      ],
+      "./app/javascript/wasm/pkg/wasm.d.ts": [
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./app/javascript/wasm/pkg/wasm_bg.wasm.d.ts": [
+        "./node_modules/@types/node/util.d.ts"
       ],
       "./node_modules/@material-ui/core/accordion/accordion.d.ts": [
         "./node_modules/@material-ui/core/index.d.ts",
@@ -7795,12 +7801,6 @@
       "./node_modules/popper.js/index.d.ts": [
         "./node_modules/@types/node/util.d.ts"
       ],
-      "./wasm/pkg/wasm.d.ts": [
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./wasm/pkg/wasm_bg.wasm.d.ts": [
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../../../../node_modules/@types/hast/index.d.ts": [
         "../../../../node_modules/@types/unist/index.d.ts",
         "./node_modules/@types/node/util.d.ts"
@@ -7929,6 +7929,8 @@
       "./app/javascript/components/templates/layout.tsx",
       "./app/javascript/components/templates/seo.tsx",
       "./app/javascript/packs/hello_typescript.ts",
+      "./app/javascript/wasm/pkg/wasm.d.ts",
+      "./app/javascript/wasm/pkg/wasm_bg.wasm.d.ts",
       "./node_modules/@material-ui/core/accordion/accordion.d.ts",
       "./node_modules/@material-ui/core/accordion/index.d.ts",
       "./node_modules/@material-ui/core/accordionactions/accordionactions.d.ts",
@@ -8356,8 +8358,6 @@
       "./node_modules/csstype/index.d.ts",
       "./node_modules/jss/src/index.d.ts",
       "./node_modules/popper.js/index.d.ts",
-      "./wasm/pkg/wasm.d.ts",
-      "./wasm/pkg/wasm_bg.wasm.d.ts",
       "../../../../node_modules/@types/hast/index.d.ts",
       "../../../../node_modules/@types/istanbul-lib-coverage/index.d.ts",
       "../../../../node_modules/@types/istanbul-lib-report/index.d.ts",
@@ -8577,6 +8577,14 @@
       ],
       [
         "./app/javascript/packs/hello_typescript.ts",
+        1
+      ],
+      [
+        "./app/javascript/wasm/pkg/wasm.d.ts",
+        1
+      ],
+      [
+        "./app/javascript/wasm/pkg/wasm_bg.wasm.d.ts",
         1
       ],
       [

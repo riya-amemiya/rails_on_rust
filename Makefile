@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	make -C wasm
+	make -C app/javascript/wasm
 	pwd
 	make python_build
 	make rust_build
