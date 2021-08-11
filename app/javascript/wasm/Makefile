@@ -3,6 +3,6 @@
 build:
 	tsc
 	cargo test
-	cargo install wasm-pack
 	rustup target add wasm32-unknown-unknown
+	cargo install wasm-pack
 	wasm-pack build --scope mynpmusername
