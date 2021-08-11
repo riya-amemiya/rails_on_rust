@@ -1,6 +1,9 @@
 {
     "name": "view",
     "private": true,
+    "scripts": {
+        "build": "make build"
+    },
     "dependencies": {
         "@babel/preset-react": "^7.14.5",
         "@babel/preset-typescript": "^7.14.5",
