@@ -1,9 +1,15 @@
 require "ffi"
 require "date"
 
+extension = "dylib"
+if Rails.env.production?
+  extension = "so"
+end
+puts extension
+
 module Rust
   extend FFI::Library
-  ffi_lib "target/release/librust_api.dylib"
+  ffi_lib "target/release/librust_api.#{extension}"
   attach_function :pow, [:int32], :int32
   attach_function :gcd, [:int32, :int32], :int32
   attach_function :lcm, [:int32, :int32], :int32
