@@ -2,7 +2,7 @@
     "name": "view",
     "private": true,
     "scripts": {
-        "build": "make heroku_build",
+        "build": "make -C app/javascript/wasm tsc",
         "test": ""
     },
     "dependencies": {

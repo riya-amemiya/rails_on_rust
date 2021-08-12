@@ -16,3 +16,8 @@ build:
 heroku_build:
 	tsc
 	make wasm-build
+
+.PHONY: tsc
+
+tsc:
+	tsc
