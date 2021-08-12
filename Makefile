@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	make -C app/javascript/wasm
+	make -C app/javascript/wasm heroku_build
 	pwd
 	make python_build
 	make rust_build
@@ -11,8 +11,6 @@ python_build:
 
 .PHONY: rust_build
 rust_build:
-	make rust_fix
-	cargo test
 	cargo build --release
 
 .PHONY: rust_fix
