@@ -2,7 +2,7 @@
     "name": "view",
     "private": true,
     "scripts": {
-        "build": "make -C app/javascript/wasm tsc && make heroku && ls",
+        "build": "make -C app/javascript/wasm tsc && ls",
         "test": "yarn ts-node",
         "ts-node": "ts-node --project app/javascript/test/tsconfig.json app/javascript/test/src/index.ts"
     },
