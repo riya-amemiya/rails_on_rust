@@ -2,7 +2,6 @@
 build:
 	make -C app/javascript/wasm heroku_build
 	pwd
-	make python_build
 	make rust_build
 .PHONY: python_build
 
