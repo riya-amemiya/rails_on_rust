@@ -1,6 +1,10 @@
 [package]
+authors = ["Your Name <hiyoriorria@gmail.com>"]
+description = "wasm-pack"
 edition = "2018"
-name = "wasm"
+license = "MIT/Apache-2.0"
+name = "wasm_riya_hiyori"
+repository = "https://github.com/riya81/rails_on_rust/tree/main/app/javascript/wasm"
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
