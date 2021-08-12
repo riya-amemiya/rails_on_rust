@@ -49,6 +49,7 @@ default: &default
         - .gif
         - .jpeg
         - .jpg
+        - .wasm
 
 development:
     <<: *default
