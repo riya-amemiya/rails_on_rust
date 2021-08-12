@@ -27,7 +27,7 @@
       "es2020",
       "dom"
     ],
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es6",
