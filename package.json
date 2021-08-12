@@ -2,7 +2,8 @@
     "name": "view",
     "private": true,
     "scripts": {
-        "build": "make python_build"
+        "build": "make python_build",
+        "test": ""
     },
     "dependencies": {
         "@babel/preset-react": "^7.14.5",
