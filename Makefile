@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	make -C app/javascript/wasm heroku_build
+	make -C app/javascript/wasm build
 	pwd
 	make rust_build
 .PHONY: python_build

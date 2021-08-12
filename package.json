@@ -2,7 +2,7 @@
     "name": "view",
     "private": true,
     "scripts": {
-        "build": "make",
+        "build": "make heroku_build",
         "test": ""
     },
     "dependencies": {
