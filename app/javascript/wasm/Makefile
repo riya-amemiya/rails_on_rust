@@ -3,7 +3,6 @@
 build:
 	tsc
 	wasm-pack build --scope mynpmusername
-
 .PHONY: wasm-build
 
 build:

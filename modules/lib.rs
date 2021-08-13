@@ -3,7 +3,7 @@
 //! プログラミング言語の壁を超えろ
 
 mod os;
-
+use std::collections::HashMap;
 ///xの二乗
 #[no_mangle]
 pub extern "C" fn pow(x: i32) -> i32 {
@@ -97,7 +97,6 @@ fn quotient_not_surplus_test() {
 pub extern "C" fn os_name() -> i32 {
     return os::name();
 }
-use std::collections::HashMap;
 #[no_mangle]
 pub fn ajax() -> Result<(), Box<dyn std::error::Error>> {
     let resp =

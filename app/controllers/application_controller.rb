@@ -16,10 +16,11 @@ module Rust
 end
 
 class ApplicationController < ActionController::Base
-  def rails_to_react(name)
+  def data(name)
     day = Date.today
     time = DateTime.now
     return{
+            ip: request.remote_ip,
             name: name,
             time: {
               hour: time.hour,

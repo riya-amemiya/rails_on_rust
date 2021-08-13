@@ -8,7 +8,9 @@ const Header = () => {
     return (
         <>
             <AppBar>
-                <DIV>header</DIV>
+                <DIV>
+                    <div>Home</div>
+                </DIV>
             </AppBar>
             ;
         </>
