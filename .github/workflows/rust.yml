@@ -66,7 +66,7 @@ jobs:
                   cmd: install
             - uses: borales/actions-yarn@v2.3.0
               with:
-                  cmd: build # will run `yarn build` command
+                  cmd: build_git # will run `yarn build` command
             - uses: borales/actions-yarn@v2.3.0
               with:
                   cmd: test # will run `yarn test` command
