@@ -30,8 +30,9 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
   config.serve_static_assets = true
-  config.assets.css_compressor = :sass # sass-rails gemを使用している場合コメントアウトを外す
-  config.public_file_server.enabled = true # publicディレクトリ以下のアセットを返す設定
+  config.assets.css_compressor = :sass
+  config.assets.initialize_on_precompile = false
+  config.public_file_server.enabled = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
