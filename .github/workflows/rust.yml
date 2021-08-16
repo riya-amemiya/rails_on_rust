@@ -52,7 +52,6 @@ jobs:
               run: pip install -r requirements.txt
             - name: Run Python
               run: python setup.py build_ext --inplace
-            - uses: actions/checkout@v2
             - name: Setup node
               uses: actions/setup-node@v2
               with:
@@ -73,10 +72,8 @@ jobs:
                   path: |
                       node_modules
                   key: node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-            - uses: actions/checkout@v2
             - name: Build
               run: make -C app/javascript/wasm wasm-build && make rust_build
-            - uses: actions/checkout@v2
             - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
               with:
                   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
