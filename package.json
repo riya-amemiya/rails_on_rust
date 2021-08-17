@@ -2,7 +2,7 @@
     "name": "view",
     "private": true,
     "scripts": {
-        "build": "make -C app/javascript/wasm tsc && export SECRET_KEY_BASE=`bundle exec rake secret`",
+        "build": "make -C app/javascript/wasm tsc && export SECRET_KEY_BASE=`bundle exec rake secret` && ls",
         "build_git": "make -C app/javascript/wasm tsc",
         "test": "yarn ts-node",
         "ts-node": "ts-node --project app/javascript/test/tsconfig.json app/javascript/test/src/index.ts"
