@@ -3,7 +3,6 @@ import Layout from './templates/Layout';
 import styled from 'styled-components';
 import { Props } from './@types';
 import Button from '@material-ui/core/Button';
-//import { MODULES } from './modules';
 import { Rust } from './api';
 const Main = React.memo(({ props }: { props: Props }) => {
     console.log(props);
