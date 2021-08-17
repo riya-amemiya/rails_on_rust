@@ -1,4 +1,4 @@
-name: Rust
+name: Build
 
 on:
     push:
@@ -36,7 +36,7 @@ jobs:
         strategy:
             matrix:
                 node: ['12', '14', '16']
-        name: Node ${{ matrix.node }} sample
+        name: Node ${{ matrix.node }}
         steps:
             - uses: actions/checkout@v2
             - name: Setup Python
@@ -71,7 +71,7 @@ jobs:
                       node_modules
                   key: node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
             - name: Build
-              run: make -C app/javascript/wasm wasm-build && make rust_build
+              run: make -C app/javascript/wasm wasm-build && make rust_build && ls
             - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
               with:
                   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
