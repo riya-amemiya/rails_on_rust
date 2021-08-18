@@ -124,6 +124,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.3-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.12.3-x86_64-linux)
+      racc (~> 1.4)
     paperclip (3.0.4)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -239,6 +241,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
