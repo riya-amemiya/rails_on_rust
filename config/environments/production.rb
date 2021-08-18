@@ -1,14 +1,13 @@
-# frozen_string_literal: true
-Rails.application.config.assets.configure do |env|
-  env.cache = ActiveSupport::Cache.lookup_store(:null_store)
-end
+# # frozen_string_literal: true
+# Rails.application.config.assets.configure do |env|
+#   env.cache = ActiveSupport::Cache.lookup_store(:null_store)
+# end
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.assets.css_compressor = Tailwindcss::Compressor.new(files_with_class_names: Rails.root.glob("app/javascript/**/*.*"))
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
