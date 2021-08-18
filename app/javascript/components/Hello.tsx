@@ -11,7 +11,7 @@ const Main = React.memo(<T extends any>({ props, rust, state }: { props: Props; 
     console.log('====================================');
     return (
         <>
-            <h1 className="text-red-600">Main</h1>
+            <h1 className="text-2xl">Main</h1>
             <p>このサイトについて</p>
             <p>RailsをベースにレンダリングはReact</p>
             <p>処理は主にRustとCが担当(一部Python)</p>
