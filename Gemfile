@@ -8,11 +8,11 @@ gem "rails", "~> 6.1.3", ">= 6.1.3.2"
 # Use sqlite3 as the database for Active Record
 #gem "sqlite3", "~> 1.4"
 # Use Puma as the app server
-gem "puma", "~> 5.0"
+gem "puma", "~> 4.1"
 # Use SCSS for stylesheets
-gem "sass-rails"
+gem "sass-rails", ">= 6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker", "~> 5.0"
+gem "webpacker", "~> 4.0"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -58,10 +58,10 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "react-rails"
 gem "ffi"
 gem "pycall"
-gem "tailwindcss-rails"
 group :production do
   gem "pg"
   gem "rails_12factor"
-  gem "heroku-deflater"
 end
 gem "dotenv-rails"
+gem "heroku_secrets", github: "alexpeattie/heroku_secrets"
+gem 'paperclip', '3.0.4'

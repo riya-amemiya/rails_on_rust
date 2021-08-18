@@ -46,3 +46,4 @@ target
 
 *.icloud
 /.env
+secrets.yml
