@@ -72,15 +72,21 @@ const purgeCss = ({ file }) => {
 const htmlFilePatterns = filename => {
     switch (filename) {
         case "main.scss":
+            console.log(filename);
             return [
                 "./app/views/main/*.erb",
+                "./app/javascript/components/Hello.tsx",
             ];
         default:
+            console.log(filename);
             return [
                 "./app/**/*.html.erb",
                 "./config/initializers/simple_form_bootstrap.rb",
                 "./app/helpers/**/*.rb",
-                "./app/javascript/**/*.js"
+                "./app/javascript/**/*.js",
+                "./app/javascript/**/*.jsx",
+                "./app/javascript/**/*.ts",
+                "./app/javascript/**/*.tsx"
             ];
     }
 };
