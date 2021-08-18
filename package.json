@@ -27,6 +27,7 @@
         "@types/styled-components": "^5.1.11",
         "autoprefixer": "^10.3.1",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+        "fcc_typescript": "^1.0.39",
         "import-glob-loader": "^1.1.0",
         "node-sass": "^6.0.1",
         "postcss": "^8.3.6",
