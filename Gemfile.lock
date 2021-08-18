@@ -210,6 +210,8 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    tailwindcss-rails (0.4.1)
+      rails (>= 6.0.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.1.0)
@@ -264,6 +266,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sqlite3
+  tailwindcss-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
