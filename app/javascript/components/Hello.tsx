@@ -4,11 +4,29 @@ import styled from 'styled-components';
 import { Props } from './@types';
 import Button from '@material-ui/core/Button';
 import { Rust } from './api';
-const Main = React.memo(({ props }: { props: Props }) => {
+import { FCC } from 'fcc_typescript';
+const Main = React.memo(<T extends any>({ props, rust, state }: { props: Props; rust: boolean; state: T }) => {
+    console.log('====================================');
     console.log(props);
+    console.log('====================================');
+    return (
+        <>
+            <h1 className="text-red-600">Main</h1>
+            <p>このサイトについて</p>
+            <p>RailsをベースにレンダリングはReact</p>
+            <p>処理は主にRustとCが担当(一部Python)</p>
+            <Button variant="contained" color="primary">
+                Click Me
+            </Button>
+            <div>{rust ? <>{state}</> : <></>}</div>
+        </>
+    );
+});
+const Hello = (_props: Props) => {
     const CENTER = styled.div`
         text-align: center;
     `;
+    console.log(FCC.Maths.Random(8));
     const [state, setState] = useState(0);
     const [rust, setRust] = useState(false);
     useEffect(() => {
@@ -16,24 +34,13 @@ const Main = React.memo(({ props }: { props: Props }) => {
             setState(n.pow(8));
             setRust(true);
         });
-    }, []);
+    });
     return (
         <Layout title="Home" language="ja">
             <CENTER>
-                <h1 className="text-red-600">Main</h1>
-                <p>このサイトについて</p>
-                <p>RailsをベースにレンダリングはReact</p>
-                <p>処理は主にRustとCが担当(一部Python)</p>
-                <Button variant="contained" color="primary">
-                    Click Me
-                </Button>
-                <div>{rust ? <>{state}</> : <></>}</div>
+                <Main props={_props} rust={rust} state={state} />
             </CENTER>
         </Layout>
     );
-    return <></>;
-});
-const Hello = (_props: Props) => {
-    return <Main props={_props} />;
 };
 export default Hello;

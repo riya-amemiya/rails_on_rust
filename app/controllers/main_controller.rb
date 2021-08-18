@@ -3,7 +3,7 @@ require "net/http"
 require "uri"
 
 class LineNotify
-  TOKEN = "ruh7wTDgP9btB8HsEzz1K5TU2UzvdCCUIXZp1dX4sBd".freeze
+  TOKEN = ENV["TOKEN"].freeze
   URL = "https://notify-api.line.me/api/notify".freeze
 
   attr_reader :message
@@ -40,12 +40,20 @@ class MainController < ApplicationController
   def index
     o, _e, _s = Open3.capture3("python main.py")
     puts(Rust::k(9))
-    LineNotify.send(params[:ip] || "特定不能")
     @python = o
     @rust = Rust::pow(8)
     @data = data("index")
   end
 
   def home
+  end
+
+  def ip_line
+    LineNotify.send(@ip || "特定不能")
+  end
+
+  def ip
+    @ip = request.remote_ip
+    ip_line()
   end
 end
