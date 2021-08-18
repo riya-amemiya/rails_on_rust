@@ -65,3 +65,4 @@ group :production do
   gem "heroku-deflater"
 end
 gem "dotenv-rails"
+gem "heroku_secrets", github: "alexpeattie/heroku_secrets"
