@@ -3,7 +3,6 @@
 //! プログラミング言語の壁を超えろ
 
 mod os;
-use std::collections::HashMap;
 ///xの二乗
 #[no_mangle]
 pub extern "C" fn pow(x: i32) -> i32 {
@@ -96,13 +95,6 @@ fn quotient_not_surplus_test() {
 #[no_mangle]
 pub extern "C" fn os_name() -> i32 {
     return os::name();
-}
-#[no_mangle]
-pub fn ajax() -> Result<(), Box<dyn std::error::Error>> {
-    let resp =
-        reqwest::blocking::get("https://httpbin.org/ip")?.json::<HashMap<String, String>>()?;
-    println!("{:#?}", resp["origin"]);
-    return Ok(());
 }
 /// c呼び出し
 extern "C" {
