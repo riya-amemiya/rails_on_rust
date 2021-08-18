@@ -1,16 +1,16 @@
-module.exports = {
-    plugins: [
-        require('tailwindcss')("./app/javascript/stylesheets/tailwind.config.js"),
-        require('postcss-import'),
-        require('postcss-flexbugs-fixes'),
-        require('postcss-preset-env')({
-            autoprefixer: {
-                flexbox: 'no-2009'
-            },
-            stage: 3
-        })
-    ]
-}
+// module.exports = {
+//     plugins: [
+//         require('tailwindcss')("./app/javascript/stylesheets/tailwind.config.js"),
+//         require('postcss-import'),
+//         require('postcss-flexbugs-fixes'),
+//         require('postcss-preset-env')({
+//             autoprefixer: {
+//                 flexbox: 'no-2009'
+//             },
+//             stage: 3
+//         })
+//     ]
+// }
 
 // let environment = {
 //     plugins: [
@@ -47,3 +47,48 @@ module.exports = {
 // }
 
 // module.exports = environment
+const environment = ctx => ({
+    plugins: [
+        require('tailwindcss')("./app/javascript/stylesheets/tailwind.config.js"),
+        require("postcss-import"),
+        require("postcss-flexbugs-fixes"),
+        require("postcss-preset-env")({
+            autoprefixer: {
+                flexbox: "no-2009"
+            },
+            stage: 3
+        }),
+        purgeCss(ctx)
+    ]
+});
+
+const purgeCss = ({ file }) => {
+    return require("@fullhuman/postcss-purgecss")({
+        content: htmlFilePatterns(file.basename),
+        defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+    });
+};
+
+const htmlFilePatterns = filename => {
+    switch (filename) {
+        case "main.scss":
+            console.log(filename);
+            return [
+                "./app/views/main/*.erb",
+                "./app/javascript/components/Hello.tsx",
+            ];
+        default:
+            console.log(filename);
+            return [
+                "./app/**/*.html.erb",
+                "./config/initializers/simple_form_bootstrap.rb",
+                "./app/helpers/**/*.rb",
+                "./app/javascript/**/*.js",
+                "./app/javascript/**/*.jsx",
+                "./app/javascript/**/*.ts",
+                "./app/javascript/**/*.tsx"
+            ];
+    }
+};
+
+module.exports = ctx => environment(ctx);
