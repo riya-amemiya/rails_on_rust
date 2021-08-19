@@ -8,6 +8,7 @@ fn main() {
         .flag("-g")
         // .cpp(true)
         .file("modules/c/foo.c")
+        .file("modules/c/c_random.c")
         .include("modules")
         .flag("-O3")
         .flag("-mtune=native")

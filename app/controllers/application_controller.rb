@@ -2,9 +2,9 @@ require "ffi"
 require "date"
 require "open3"
 $extension = "dylib"
-if Rails.env.production?
-  $extension = "so"
-end
+# if Rails.env.production?
+#   $extension = "so"
+# end
 
 module Rust
   extend FFI::Library

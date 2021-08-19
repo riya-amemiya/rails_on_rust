@@ -1,4 +1,6 @@
+// use js_sys::async_iterator;
 use wasm_bindgen::prelude::*;
+
 #[macro_use]
 extern crate serde;
 extern crate serde_derive;

@@ -33,6 +33,7 @@ const Hello = (_props: Props) => {
         Rust.then((n) => {
             setState(n.pow(8));
             setRust(true);
+            n.rust(8);
         });
     });
     return (
