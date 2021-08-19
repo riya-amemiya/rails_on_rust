@@ -1,5 +1,16 @@
 module.exports = {
-    purge: [],
+    purge: {
+        content: [
+            './app/**/*.html.erb',
+            './app/helpers/**/*.rb',
+            './app/javascript/**/*.js',
+            './app/javascript/**/*.jsx',
+            './app/javascript/**/*.ts',
+            './app/javascript/**/*.tsx',
+            './app/javascript/**/*.vue',
+
+        ],
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {},
