@@ -16,14 +16,43 @@ module.exports = function(api) {
 
     return {
         presets: [
+            [
+                "minify",
+                {
+                    "booleans": true,
+                    "builtIns": true,
+                    "consecutiveAdds": true,
+                    "deadcode": true,
+                    "evaluate": true,
+                    "flipComparisons": true,
+                    "guards": true,
+                    "infinity": false,
+                    "mangle": true,
+                    "memberExpressions": true,
+                    "mergeVars": true,
+                    "numericLiterals": true,
+                    "propertyLiterals": true,
+                    "regexpConstructors": true,
+                    "removeConsole": true,
+                    "removeDebugger": false,
+                    "removeUndefined": true,
+                    "replace": true,
+                    "simplify": false,
+                    "simplifyComparisons": true,
+                    "typeConstructors": true,
+                    "undefinedToVoid": true
+                }
+            ],
             isTestEnv && [
                 '@babel/preset-env',
                 {
-                    targets: {
-                        node: 'current'
+                    "spec": true,
+                    "modules": "commonjs",
+                    "targets": {
+                        "node": "current",
+                        "esmodules": true
                     },
-                    modules: 'commonjs',
-                    loose: true
+                    "shippedProposals": true
                 },
                 '@babel/preset-react'
             ],
@@ -53,9 +82,6 @@ module.exports = function(api) {
             isTestEnv && 'babel-plugin-dynamic-import-node',
             '@babel/plugin-transform-destructuring', [
                 '@babel/plugin-proposal-class-properties',
-                {
-                    loose: true
-                }
             ],
             [
                 '@babel/plugin-proposal-object-rest-spread',
@@ -76,6 +102,43 @@ module.exports = function(api) {
                 {
                     async: false
                 }
+            ],
+            [
+                "@babel/plugin-transform-async-to-generator",
+                {
+                    "module": "bluebird",
+                    "method": "coroutine"
+                }
+            ],
+            [
+                "@babel/plugin-transform-template-literals"
+            ],
+            [
+                "@babel/plugin-proposal-optional-chaining"
+            ],
+            [
+                "@babel/plugin-transform-object-super"
+            ],
+            [
+                "@babel/plugin-transform-classes",
+                {
+                    "loose": true
+                }
+            ],
+            [
+                "@babel/plugin-proposal-logical-assignment-operators"
+            ],
+            [
+                "transform-inline-environment-variables"
+            ],
+            [
+                "@babel/plugin-proposal-nullish-coalescing-operator"
+            ],
+            [
+                "@babel/plugin-transform-computed-properties"
+            ],
+            [
+                "@babel/plugin-proposal-partial-application"
             ],
             isProductionEnv && [
                 'babel-plugin-transform-react-remove-prop-types',

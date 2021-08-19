@@ -9,6 +9,7 @@
         "ts-node": "ts-node --project app/javascript/test/tsconfig.json app/javascript/test/src/index.ts"
     },
     "dependencies": {
+        "@babel/plugin-proposal-partial-application": "^7.14.5",
         "@babel/preset-react": "^7.14.5",
         "@babel/preset-typescript": "^7.14.5",
         "@material-ui/core": "^4.12.3",
@@ -26,7 +27,9 @@
         "@types/react-helmet": "^6.1.2",
         "@types/styled-components": "^5.1.11",
         "autoprefixer": "^10.3.1",
+        "babel-plugin-transform-inline-environment-variables": "^0.4.3",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+        "babel-preset-minify": "^0.5.1",
         "cssnano": "^5.0.8",
         "fcc_typescript": "^1.0.39",
         "import-glob-loader": "^1.1.0",
