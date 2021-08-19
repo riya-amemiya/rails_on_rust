@@ -2,9 +2,10 @@
     "name": "view",
     "private": true,
     "scripts": {
-        "build": "make -C app/javascript/wasm tsc && export SECRET_KEY_BASE=`bundle exec rake secret` && ls",
+        "build": "make -C app/javascript/wasm tsc && export SECRET_KEY_BASE=`bundle exec rake secret` && yarn tw && ls",
         "build_git": "make -C app/javascript/wasm tsc",
         "test": "yarn ts-node",
+        "tw": "NODE_ENV=production postcss app/javascript/css/tailwindcss.css -o app/assets/stylesheets/tailwindcss.scss",
         "ts-node": "ts-node --project app/javascript/test/tsconfig.json app/javascript/test/src/index.ts"
     },
     "dependencies": {
@@ -26,6 +27,7 @@
         "@types/styled-components": "^5.1.11",
         "autoprefixer": "^10.3.1",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+        "cssnano": "^5.0.8",
         "fcc_typescript": "^1.0.39",
         "import-glob-loader": "^1.1.0",
         "node-sass": "^6.0.1",
