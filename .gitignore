@@ -47,4 +47,4 @@ target
 *.icloud
 /.env
 secrets.yml
-tailwindcss.scss
+app/assets/stylesheets/tailwindcss.scss

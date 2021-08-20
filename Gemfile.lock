@@ -126,6 +126,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.12.3-x86_64-linux)
       racc (~> 1.4)
+    os (1.1.1)
     paperclip (3.0.4)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -254,6 +255,7 @@ DEPENDENCIES
   heroku_secrets!
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  os
   paperclip (= 3.0.4)
   pg
   puma (~> 4.1)

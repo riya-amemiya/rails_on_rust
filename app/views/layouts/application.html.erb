@@ -26,6 +26,11 @@
     <%= stylesheet_link_tag "inter-font" %>
     <%= stylesheet_link_tag "application" %>
     <%= stylesheet_link_tag "tailwindcss" %>
+    <% if Rails.env == "development" %>
+        <%= stylesheet_link_tag "development/tailwindcss" %>
+    <% else %>
+        <%= stylesheet_link_tag "tailwindcss" %>
+    <% end %>
     <%= javascript_pack_tag "application" %>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>

@@ -24,3 +24,7 @@ rust_fix:
 heroku:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	make rust_build
+.PHONY: server
+server:
+	yarn tw
+	rails server --environment production
