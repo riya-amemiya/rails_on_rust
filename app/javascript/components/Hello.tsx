@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from './templates/Layout';
+
 import styled from 'styled-components';
 import { Props } from './@types';
 import Button from '@material-ui/core/Button';
@@ -11,11 +12,12 @@ interface DATA {
 const Main = React.memo(({ props, state }: { props: Props; state: any }) => {
     const [ip, setIp] = useState('');
     const [show, setShow] = useState('Show');
-    console.log('====================================');
+    console.log('===================================');
     console.log(props);
-    console.log('====================================');
+    console.log('===================================');
     const get_ip = () => {
         Rust.then((n) => {
+            setIp(`読み込み中`);
             n.run('https://api.ipify.org?format=json').then((data: DATA) => {
                 setIp(`Your ip:${data.ip}`);
             });
@@ -23,10 +25,6 @@ const Main = React.memo(({ props, state }: { props: Props; state: any }) => {
     };
     return (
         <>
-            <h1 className="text-2xl">Main</h1>
-            <p>このサイトについて</p>
-            <p>RailsをベースにレンダリングはReact</p>
-            <p>処理は主にRustとCが担当(一部Python)</p>
             <Button
                 variant="contained"
                 color="primary"
@@ -64,7 +62,7 @@ const Hello = (_props: Props) => {
         setComponetMain(<Main props={_props} state={state} />);
     }, [rust]);
     return (
-        <Layout title="Home" language="ja">
+        <Layout title="Home" language="ja" id="_Layout-main">
             <CENTER>{rust ? ComponetMain : <></>}</CENTER>
         </Layout>
     );

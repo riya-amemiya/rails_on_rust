@@ -54,22 +54,31 @@ const Layout = ({
     `;
     return (
         <>
-            <Header />
-            <Seo description={description} title={title} name={name} keyword={keyword} url={pathName} language={language} />
-            <style>
-                {`
+            <div id="_Layout">
+                <Header />
+                <Seo
+                    description={description}
+                    title={title}
+                    name={name}
+                    keyword={keyword}
+                    url={pathName}
+                    language={language}
+                />
+                <style>
+                    {`
                 html,
                 body {
                     height: 100%;
                 }
                 `}
-            </style>
-            <DIV className="_Layout-div" style={style.div}>
-                <main className="_Layout-main" style={style.main} id={id}>
-                    <Main component={children} />
-                </main>
-            </DIV>
-            <Footer />
+                </style>
+                <DIV id="_Layout-div" style={style.div}>
+                    <main className="" style={style.main} id={id}>
+                        <Main component={children} />
+                    </main>
+                </DIV>
+                <Footer />
+            </div>
         </>
     );
 };
