@@ -1,0 +1,1 @@
+int c_random(int x, int y);

@@ -56,4 +56,9 @@ class MainController < ApplicationController
     @ip = request.remote_ip
     ip_line()
   end
+  def hello
+    render :json => {
+      Hello: "Hello World"
+    }
+  end
 end

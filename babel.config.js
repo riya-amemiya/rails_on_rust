@@ -13,7 +13,6 @@ module.exports = function(api) {
             '.'
         )
     }
-
     return {
         presets: [
             [
@@ -33,7 +32,7 @@ module.exports = function(api) {
                     "numericLiterals": true,
                     "propertyLiterals": true,
                     "regexpConstructors": true,
-                    "removeConsole": true,
+                    "removeConsole": (isProductionEnv) ? true : false,
                     "removeDebugger": false,
                     "removeUndefined": true,
                     "replace": true,
