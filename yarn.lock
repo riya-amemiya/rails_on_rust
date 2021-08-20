@@ -9525,10 +9525,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-wasm_riya_hiyori@^0.4.6:
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/wasm_riya_hiyori/-/wasm_riya_hiyori-0.4.6.tgz#977dfef538d1e7ea37e317363aefddd64a92d6a5"
-  integrity sha512-ffHcGVaupTDF/NuZP90ivLDxgMOB3RWEGsTjlV+v+jQuISmeZunHBYK6qIk74bihJfDqb0H/ROpzY2+b+uqLBQ==
+wasm_riya_hiyori@^0.4.24:
+  version "0.4.24"
+  resolved "https://registry.yarnpkg.com/wasm_riya_hiyori/-/wasm_riya_hiyori-0.4.24.tgz#9554c7f2150550286687f5db82eb4ed945ea8308"
+  integrity sha512-gC3Yu0Ix/Ppmw8j1imvSLe+Aoegpr+8AUOBhRI1lOIjZvD8FQwt3+d6H0TEc8/RUfE1f3bV6eIPo1/piqLXzJA==
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"

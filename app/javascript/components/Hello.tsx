@@ -33,9 +33,12 @@ const Hello = (_props: Props) => {
         Rust.then((n) => {
             setState(n.pow(8));
             setRust(true);
-            n.rust(8);
-        });
+            n.run().then((data: any) => {
+                console.log(data);
+            });
+        }).catch(console.error);
     });
+
     return (
         <Layout title="Home" language="ja">
             <CENTER>
