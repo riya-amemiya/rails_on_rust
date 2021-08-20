@@ -5,7 +5,7 @@ edition = "2018"
 license = "MIT/Apache-2.0"
 name = "wasm_riya_hiyori"
 repository = "https://github.com/riya81/rails_on_rust/tree/main/app/javascript/wasm"
-version = "0.4.24"
+version = "0.4.25"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

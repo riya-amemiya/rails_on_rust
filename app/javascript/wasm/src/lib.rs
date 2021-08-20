@@ -38,12 +38,12 @@ pub struct Branch {
     pub ip: String,
 }
 #[wasm_bindgen]
-pub async fn run() -> Result<JsValue, JsValue> {
+pub async fn run(url: String) -> Result<JsValue, JsValue> {
     let mut opts = RequestInit::new();
     opts.method("GET");
     opts.mode(RequestMode::Cors);
     // "https://api.github.com/repos/rustwasm/wasm-bindgen/branches/master"
-    let url = format!("https://api.ipify.org?format=json");
+    let url = format!("{}", url);
 
     let request = Request::new_with_str_and_init(&url, &opts)?;
 
