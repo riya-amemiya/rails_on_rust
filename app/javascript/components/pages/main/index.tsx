@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Layout from './templates/Layout';
+import Layout from '../../templates/Layout';
 
 import styled from 'styled-components';
-import { Props } from './@types';
+import { Props } from '../../@types';
 import Button from '@material-ui/core/Button';
-import { Rust } from './api';
+import { Rust } from '../../api';
 import { FCC } from 'fcc_typescript';
 interface DATA {
     ip: string;
@@ -14,6 +14,8 @@ const Main = React.memo(({ props, state }: { props: Props; state: any }) => {
     const [show, setShow] = useState('Show');
     console.log('===================================');
     console.log(props);
+    console.log(state);
+
     console.log('===================================');
     const get_ip = () => {
         Rust.then((n) => {
@@ -40,7 +42,6 @@ const Main = React.memo(({ props, state }: { props: Props; state: any }) => {
                 {show} me ip
             </Button>
             <div>{ip}</div>
-            <div>{state}</div>
         </>
     );
 });

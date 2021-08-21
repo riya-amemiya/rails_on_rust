@@ -1,7 +1,7 @@
 require "ffi"
 require "date"
 require "open3"
-require 'os'
+require "os"
 $extension = "dylib"
 if Rails.env.production?
   if OS.linux?
