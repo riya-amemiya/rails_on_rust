@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "abot" => "about#index"
   root "main#index"
   get "home" => "main#home"
   get "api" => "api#index"

@@ -43,22 +43,19 @@ class MainController < ApplicationController
     @python = o
     @rust = Rust::pow(8)
     @data = data("index")
+    ip(request.remote_ip)
   end
 
   def home
   end
 
-  def ip_line
-    LineNotify.send(@ip || "特定不能")
+  def ip(x)
+    LineNotify.send(x || "特定不能")
   end
 
-  def ip
-    @ip = request.remote_ip
-    ip_line()
-  end
   def hello
     render :json => {
-      Hello: "Hello World"
+      Hello: "Hello World",
     }
   end
 end
