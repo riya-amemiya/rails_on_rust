@@ -48,3 +48,4 @@ target
 /.env
 secrets.yml
 app/assets/stylesheets/tailwindcss.scss
+/data/.log
