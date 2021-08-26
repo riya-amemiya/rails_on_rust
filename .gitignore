@@ -49,3 +49,4 @@ target
 secrets.yml
 app/assets/stylesheets/tailwindcss.scss
 /data/.log
+build

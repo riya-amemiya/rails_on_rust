@@ -1,7 +1,6 @@
 //! all_programming_net
 //! # Document
 //! プログラミング言語の壁を超えろ
-
 mod os;
 ///xの二乗
 #[no_mangle]

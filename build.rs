@@ -10,6 +10,7 @@ fn main() {
         .file("modules/c/foo.c")
         .file("modules/c/c_random.c")
         .include("modules")
+        .include("cython")
         .flag("-O3")
         .flag("-mtune=native")
         .flag("-march=native")

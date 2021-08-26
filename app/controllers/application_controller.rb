@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
     day = Date.today
     time = DateTime.now
     return{
+            url: {
+              controller: params[:controller],
+              action: params[:action],
+            },
             ip: request.remote_ip,
             name: name,
             time: {

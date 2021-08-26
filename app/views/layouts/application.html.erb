@@ -25,7 +25,7 @@
 
     <%= stylesheet_link_tag "inter-font" %>
     <%= stylesheet_link_tag "application" %>
-    <%= stylesheet_link_tag "tailwindcss" %>
+    <%= stylesheet_link_tag params[:controller], media: "all" %>
     <% if Rails.env == "development" %>
         <%= stylesheet_link_tag "development/tailwindcss" %>
     <% else %>
