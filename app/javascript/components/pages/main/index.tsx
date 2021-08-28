@@ -48,7 +48,7 @@ const Main_Index = () => {
                 <div>自己満サイト</div>
                 <IP />
                 <div>
-                    <p></p>
+                    <p>RustをWebで動かしたかっただけ</p>
                 </div>
             </CENTER>
         </Layout>

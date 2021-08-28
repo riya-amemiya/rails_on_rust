@@ -23,7 +23,11 @@ crate-type = ["cdylib"]
 [dependencies.web-sys]
 features = [
   'Window',
+  'Document',
+  'Element',
+  'HtmlCanvasElement',
   'console',
+  'CanvasRenderingContext2d',
   'Headers',
   'Request',
   'RequestInit',

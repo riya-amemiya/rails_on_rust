@@ -1,3 +1,4 @@
+import OPEN from './open';
 import GET_URL from './url';
 class MODULES_CLASS {
     private url = GET_URL;
@@ -9,6 +10,7 @@ class MODULES_CLASS {
     get get_url() {
         return this.url();
     }
+    open = OPEN;
 }
-const MODULES = new MODULES_CLASS();
-export { MODULES };
+const modules = new MODULES_CLASS();
+export { modules };
