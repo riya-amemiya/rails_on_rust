@@ -2,6 +2,7 @@ extern crate cc;
 
 fn main() {
     let path = "modules/c/c_";
+    println!("cargo:rustc-link-lib=c++");
     cc::Build::new()
         .warnings(true)
         .flag("-Wall")
@@ -11,6 +12,7 @@ fn main() {
         .file(format!("{}hello.c", path))
         .file(format!("{}math.c", path))
         .file(format!("{}random.c", path))
+        .file(format!("{}cpp.cpp", path))
         .include("modules")
         .include("cython")
         .flag("-O3")

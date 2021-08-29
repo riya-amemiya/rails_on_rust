@@ -1,8 +1,10 @@
 RUST_PATH = ./modules/
 INCLUDE_PATH = $(RUST_PATH)include/
-RUST_MODULES = $(INCLUDE_PATH)c_hello.rs $(INCLUDE_PATH)c_math.rs $(INCLUDE_PATH)c_random.rs
+RUST_MODULES = $(INCLUDE_PATH)c_hello.rs $(INCLUDE_PATH)c_math.rs $(INCLUDE_PATH)c_random.rs $(INCLUDE_PATH)c_cpp.rs
 .SUFFIXES: .h .rs
+.SUFFIXES: .hpp .rs
 vpath %.h $(RUST_PATH)
+vpath %.hpp $(RUST_PATH)
 .PHONY: rust_build
 rust_build:
 	cargo build --release
@@ -35,17 +37,18 @@ server:
 	rails server --environment production
 
 # $(wildcard $(RUST_PATH)c/include/*.h)
+# $(foreach p,$^,$(call F,$(p)))
 bindgen: $(RUST_MODULES)
-	rm modules/include.rs
-	$(foreach p,$^,$(call F,$(p)))
+	@echo $(strip $(patsubst c_%,pub mod c_%"\n",$(patsubst %.rs,%\;,$(notdir $(RUST_MODULES))))) > modules/include.rs
+
 define C
+	@echo $(1)
 	bindgen $(1) > $(RUST_PATH)include/$(basename $(notdir $(1))).rs
 
 endef
+# echo "pub mod $(basename $(notdir $(1)));" >> modules/include.rs
 
-define F
-	echo "pub mod $(basename $(notdir $(1)));" >> modules/include.rs
-
-endef
 .h.rs:
+	$(foreach p,$^,$(call C,$(p)))
+.hpp.rs:
 	$(foreach p,$^,$(call C,$(p)))

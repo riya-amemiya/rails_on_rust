@@ -3,7 +3,7 @@
 //! プログラミング言語の壁を超えろ
 mod include;
 mod os;
-use include::{c_hello::*, c_math::*, c_random::*};
+use include::{c_cpp::*, c_hello::*, c_math::*, c_random::*};
 use libc::c_char;
 #[no_mangle]
 pub extern "C" fn hello() -> i32 {
@@ -117,5 +117,11 @@ fn math_test() {}
 pub extern "C" fn random(x: i32, y: i32) -> i32 {
     unsafe {
         return c_random(x, y);
+    };
+}
+#[no_mangle]
+pub extern "C" fn cpp() -> i32 {
+    unsafe {
+        return c_cpp();
     };
 }
