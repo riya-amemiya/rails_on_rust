@@ -1,4 +1,8 @@
 RUST_PATH = ./modules/
+INCLUDE_PATH = $(RUST_PATH)include/
+RUST_MODULES = $(INCLUDE_PATH)c_hello.rs $(INCLUDE_PATH)c_math.rs $(INCLUDE_PATH)c_random.rs
+.SUFFIXES: .h .rs
+vpath %.h $(RUST_PATH)
 .PHONY: rust_build
 rust_build:
 	cargo build --release
@@ -30,11 +34,18 @@ server:
 	yarn tw
 	rails server --environment production
 
-.PHONY: bindgen
-
-define F
+# $(wildcard $(RUST_PATH)c/include/*.h)
+bindgen: $(RUST_MODULES)
+	rm modules/include.rs
+	$(foreach p,$^,$(call F,$(p)))
+define C
 	bindgen $(1) > $(RUST_PATH)include/$(basename $(notdir $(1))).rs
 
 endef
-bindgen: $(wildcard $(RUST_PATH)c/include/*.h)
-	$(foreach p,$^,$(call F,$(p)))
+
+define F
+	echo "pub mod $(basename $(notdir $(1)));" >> modules/include.rs
+
+endef
+.h.rs:
+	$(foreach p,$^,$(call C,$(p)))
