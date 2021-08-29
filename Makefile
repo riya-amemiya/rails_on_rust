@@ -1,7 +1,8 @@
-
+RUST_PATH = ./modules/
 .PHONY: rust_build
 rust_build:
 	cargo build --release
+
 .PHONY: build
 build:
 	make -C app/javascript/wasm build
@@ -28,3 +29,12 @@ heroku:
 server:
 	yarn tw
 	rails server --environment production
+
+.PHONY: bindgen
+
+define F
+	bindgen $(1) > $(RUST_PATH)include/$(basename $(notdir $(1))).rs
+
+endef
+bindgen: $(wildcard $(RUST_PATH)c/include/*.h)
+	$(foreach p,$^,$(call F,$(p)))

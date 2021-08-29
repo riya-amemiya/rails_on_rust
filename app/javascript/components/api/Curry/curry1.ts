@@ -1,4 +1,4 @@
-export type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
+import { ArgumentTypes } from '../../@types';
 export interface CURRY1 {
     <T extends (a: A) => ReturnType<T>, A>(fn: T): {
         (a: ArgumentTypes<typeof fn>[0]): ReturnType<T>;

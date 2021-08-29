@@ -952,7 +952,7 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'python_modules' */
 __PYX_EXTERN_C PyObject *c_pow(int, int __pyx_skip_dispatch); /*proto*/
-__PYX_EXTERN_C PyObject *c_add(int, int __pyx_skip_dispatch); /*proto*/
+__PYX_EXTERN_C int c_add(int, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "python_modules"
 extern int __pyx_module_is_main_python_modules;
 int __pyx_module_is_main_python_modules = 0;
@@ -971,7 +971,7 @@ static PyObject *__pyx_pf_14python_modules_2c_add(CYTHON_UNUSED PyObject *__pyx_
 /* "cython/index.pyx":1
  * cpdef public c_pow(int x):             # <<<<<<<<<<<<<<
  *     return x * x;
- * cpdef public c_add(int x):
+ * cpdef public int c_add(int x):
  */
 
 static PyObject *__pyx_pw_14python_modules_1c_pow(PyObject *__pyx_self, PyObject *__pyx_arg_x); /*proto*/
@@ -984,7 +984,7 @@ PyObject *c_pow(int __pyx_v_x, CYTHON_UNUSED int __pyx_skip_dispatch) {
   /* "cython/index.pyx":2
  * cpdef public c_pow(int x):
  *     return x * x;             # <<<<<<<<<<<<<<
- * cpdef public c_add(int x):
+ * cpdef public int c_add(int x):
  *     return x + x;
  */
   __Pyx_XDECREF(__pyx_r);
@@ -997,7 +997,7 @@ PyObject *c_pow(int __pyx_v_x, CYTHON_UNUSED int __pyx_skip_dispatch) {
   /* "cython/index.pyx":1
  * cpdef public c_pow(int x):             # <<<<<<<<<<<<<<
  *     return x * x;
- * cpdef public c_add(int x):
+ * cpdef public int c_add(int x):
  */
 
   /* function exit code */
@@ -1060,43 +1060,33 @@ static PyObject *__pyx_pf_14python_modules_c_pow(CYTHON_UNUSED PyObject *__pyx_s
 /* "cython/index.pyx":3
  * cpdef public c_pow(int x):
  *     return x * x;
- * cpdef public c_add(int x):             # <<<<<<<<<<<<<<
+ * cpdef public int c_add(int x):             # <<<<<<<<<<<<<<
  *     return x + x;
  */
 
 static PyObject *__pyx_pw_14python_modules_3c_add(PyObject *__pyx_self, PyObject *__pyx_arg_x); /*proto*/
-PyObject *c_add(int __pyx_v_x, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  PyObject *__pyx_r = NULL;
+int c_add(int __pyx_v_x, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  int __pyx_r;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("c_add", 0);
 
   /* "cython/index.pyx":4
  *     return x * x;
- * cpdef public c_add(int x):
+ * cpdef public int c_add(int x):
  *     return x + x;             # <<<<<<<<<<<<<<
  */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int((__pyx_v_x + __pyx_v_x)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_r = (__pyx_v_x + __pyx_v_x);
   goto __pyx_L0;
 
   /* "cython/index.pyx":3
  * cpdef public c_pow(int x):
  *     return x * x;
- * cpdef public c_add(int x):             # <<<<<<<<<<<<<<
+ * cpdef public int c_add(int x):             # <<<<<<<<<<<<<<
  *     return x + x;
  */
 
   /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("python_modules.c_add", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
   __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
@@ -1130,7 +1120,7 @@ static PyObject *__pyx_pf_14python_modules_2c_add(CYTHON_UNUSED PyObject *__pyx_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("c_add", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = c_add(__pyx_v_x, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(c_add(__pyx_v_x, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1449,7 +1439,7 @@ if (!__Pyx_RefNanny) {
   /* "cython/index.pyx":1
  * cpdef public c_pow(int x):             # <<<<<<<<<<<<<<
  *     return x * x;
- * cpdef public c_add(int x):
+ * cpdef public int c_add(int x):
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

@@ -1,3 +1,4 @@
-pub fn name() -> i32 {
-    return 0;
+use std::ffi::CString;
+pub fn name() -> CString {
+    return CString::new("Windows").unwrap();
 }

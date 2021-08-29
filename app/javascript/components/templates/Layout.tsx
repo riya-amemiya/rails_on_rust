@@ -12,7 +12,7 @@ interface Props {
     siteUrl?: string;
     keyword?: string;
     name?: string;
-    url?: string;
+    url_name: string;
     style?: {
         div: React.CSSProperties;
         main: React.CSSProperties;
@@ -40,11 +40,12 @@ const Layout = ({
     },
     id = '',
     language = 'ja',
+    url_name = '',
 }: Props): JSX.Element => {
     const [pathName, setPathName] = useState('');
     useEffect(() => {
         if (API.check_window()) {
-            setPathName(location.pathname);
+            setPathName(`${url_name}`);
         }
     }, []);
     const DIV = styled.div`

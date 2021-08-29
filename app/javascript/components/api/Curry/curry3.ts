@@ -1,3 +1,4 @@
+import { ArgumentTypes } from '../../@types';
 interface CURRY3 {
     <T extends (a: A, b: B, c: C) => ReturnType<T>, A, B, C>(fn: T): {
         (a: ArgumentTypes<typeof fn>[0], b: ArgumentTypes<typeof fn>[1], c: ArgumentTypes<typeof fn>[2]): ReturnType<T>;
@@ -10,7 +11,6 @@ interface CURRY3 {
         (a: ArgumentTypes<typeof fn>[0]): (b: ArgumentTypes<typeof fn>[1], c: ArgumentTypes<typeof fn>[2]) => ReturnType<T>;
     };
 }
-type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
 export const curry3 = (<T extends <A, B, C>(a: A, b: B, c: C) => ReturnType<T>>(fn: T) => {
     function curry(a: ArgumentTypes<typeof fn>[0], b?: ArgumentTypes<typeof fn>[1], c?: ArgumentTypes<typeof fn>[2]) {
         switch (arguments.length) {
