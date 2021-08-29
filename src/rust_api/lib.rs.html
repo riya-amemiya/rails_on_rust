@@ -120,12 +120,19 @@
 <span id="118">118</span>
 <span id="119">119</span>
 <span id="120">120</span>
+<span id="121">121</span>
 </pre><pre class="rust">
 <span class="doccomment">//! all_programming_net</span>
 <span class="doccomment">//! # Document</span>
 <span class="doccomment">//! プログラミング言語の壁を超えろ</span>
-
+<span class="kw">mod</span> <span class="ident">include</span>;
 <span class="kw">mod</span> <span class="ident">os</span>;
+<span class="kw">use</span> <span class="ident">include</span>::{<span class="ident">c_hello</span>::<span class="kw-2">*</span>, <span class="ident">c_math</span>::<span class="kw-2">*</span>, <span class="ident">c_random</span>::<span class="kw-2">*</span>};
+<span class="kw">use</span> <span class="ident">libc::c_char</span>;
+<span class="attribute">#[<span class="ident">no_mangle</span>]</span>
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">hello</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">unsafe</span> { <span class="kw">return</span> <span class="ident">c_hello</span>() }
+}
 <span class="doccomment">///xの二乗</span>
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">pow</span>(<span class="ident">x</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
@@ -216,25 +223,20 @@
 }
 <span class="doccomment">/// os判定</span>
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
-<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">os_name</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
-    <span class="kw">return</span> <span class="ident">os::name</span>();
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">os_name</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span> {
+    <span class="kw">return</span> <span class="ident">os::name</span>().<span class="ident">as_ptr</span>();
 }
-<span class="doccomment">/// c呼び出し</span>
-<span class="kw">extern</span> <span class="string">&quot;C&quot;</span> {
-    <span class="kw">fn</span> <span class="ident">foo</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>, <span class="ident">z</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span>;
-}
+
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">math</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>, <span class="ident">z</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
     <span class="kw">unsafe</span> {
-        <span class="kw">return</span> <span class="ident">foo</span>(<span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span>);
+        <span class="kw">return</span> <span class="ident">c_math</span>(<span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span>);
     };
 }
 <span class="attribute">#[<span class="ident">test</span>]</span>
 <span class="attribute">#[<span class="ident">ignore</span>]</span>
 <span class="kw">fn</span> <span class="ident">math_test</span>() {}
-<span class="kw">extern</span> <span class="string">&quot;C&quot;</span> {
-    <span class="kw">fn</span> <span class="ident">c_random</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span>;
-}
+
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">random</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
     <span class="kw">unsafe</span> {
