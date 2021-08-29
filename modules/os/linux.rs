@@ -1,3 +1,4 @@
-pub fn name() -> i32 {
-    return 2;
+use std::ffi::CString;
+pub fn name() -> CString {
+    return CString::new("Linux").unwrap();
 }

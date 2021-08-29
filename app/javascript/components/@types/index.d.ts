@@ -18,4 +18,5 @@ type Props = {
         };
     };
 };
-export { Props };
+type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
+export { Props, ArgumentTypes };

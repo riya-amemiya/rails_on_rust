@@ -1,7 +1,14 @@
 //! all_programming_net
 //! # Document
 //! プログラミング言語の壁を超えろ
+mod include;
 mod os;
+use include::{c_hello::*, c_math::*, c_random::*};
+use libc::c_char;
+#[no_mangle]
+pub extern "C" fn hello() -> i32 {
+    unsafe { return c_hello() }
+}
 ///xの二乗
 #[no_mangle]
 pub extern "C" fn pow(x: i32) -> i32 {
@@ -92,25 +99,20 @@ fn quotient_not_surplus_test() {
 }
 /// os判定
 #[no_mangle]
-pub extern "C" fn os_name() -> i32 {
-    return os::name();
+pub extern "C" fn os_name() -> *const c_char {
+    return os::name().as_ptr();
 }
-/// c呼び出し
-extern "C" {
-    fn foo(x: i32, y: i32, z: i32) -> i32;
-}
+
 #[no_mangle]
 pub extern "C" fn math(x: i32, y: i32, z: i32) -> i32 {
     unsafe {
-        return foo(x, y, z);
+        return c_math(x, y, z);
     };
 }
 #[test]
 #[ignore]
 fn math_test() {}
-extern "C" {
-    fn c_random(x: i32, y: i32) -> i32;
-}
+
 #[no_mangle]
 pub extern "C" fn random(x: i32, y: i32) -> i32 {
     unsafe {

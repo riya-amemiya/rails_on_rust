@@ -46,10 +46,10 @@ const Main_Index = () => {
         <Layout title="Home" language="ja" id="_Layout-main" url_name={''}>
             <CENTER>
                 <div>自己満サイト</div>
-                <IP />
                 <div>
                     <p>RustをWebで動かしたかっただけ</p>
                 </div>
+                <IP />
             </CENTER>
         </Layout>
     );
