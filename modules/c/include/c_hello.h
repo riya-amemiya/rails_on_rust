@@ -1,1 +1,1 @@
-int c_hello(int x);
+int c_hello();
