@@ -39,6 +39,7 @@ server:
 # $(wildcard $(RUST_PATH)c/include/*.h)
 # $(foreach p,$^,$(call F,$(p)))
 bindgen: $(RUST_MODULES)
+	@echo $(notdir $(RUST_MODULES))
 	@echo $(strip $(patsubst c_%,pub mod c_%,$(patsubst %.rs,%\;,$(notdir $(RUST_MODULES))))) > modules/include.rs
 
 define C
