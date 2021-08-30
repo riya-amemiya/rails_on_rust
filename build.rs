@@ -1,7 +1,11 @@
 extern crate cc;
-
+use std::process::Command;
 fn main() {
     let path = "modules/c/c_";
+    Command::new("make")
+        .arg("bindgen")
+        .output()
+        .expect("failed to execute process");
     cc::Build::new()
         .warnings(true)
         .flag("-Wall")
