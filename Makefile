@@ -8,8 +8,9 @@ vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
 	g++ --version
-	apt-cache search c++
-	apt-cache search unixodbc unixodbc-dev
+	mount -o remount,rw /
+	apt-get install c++
+	apt-get install unixodbc unixodbc-dev
 	dpkg -l
 .PHONY: rust_build
 rust_build:
