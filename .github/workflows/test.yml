@@ -28,7 +28,7 @@ jobs:
             - name: Run Python Test
               run: python test.py
             - name: Run Rust Test
-              run: rm modules/include/*.rs && cargo install bindgen && make bindgen && make rust_build && cargo test --verbose
+              run: make rust_build && cargo test --verbose
 
     build:
         needs: test
