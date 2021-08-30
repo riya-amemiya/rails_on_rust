@@ -8,7 +8,8 @@ vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
 	g++ --version
-	apt-cache search c++
+	rpm -qa | grep libc++
+	yum search libc++
 .PHONY: rust_build
 rust_build:
 	cargo build --release
