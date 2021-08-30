@@ -6,3 +6,4 @@ libc-bin
 libclang-cpp9
 cpp
 libstdc++6
+libcc1-0
