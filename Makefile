@@ -5,6 +5,9 @@ RUST_MODULES = $(INCLUDE_PATH)c_hello.rs $(INCLUDE_PATH)c_math.rs $(INCLUDE_PATH
 .SUFFIXES: .hpp .rs
 vpath %.h $(RUST_PATH)
 vpath %.hpp $(RUST_PATH)
+.PHONY: cpp
+cpp:
+	ls
 .PHONY: rust_build
 rust_build:
 	cargo build --release
