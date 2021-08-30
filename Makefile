@@ -16,7 +16,6 @@ rust_build:
 build:
 	make -C app/javascript/wasm build
 	pwd
-	make rust_build
 	rm modules/include/*.rs
 	make bindgen
 	make rust_build
