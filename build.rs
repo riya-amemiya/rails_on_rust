@@ -2,12 +2,13 @@ extern crate cc;
 
 fn main() {
     let path = "modules/c/c_";
-    println!("cargo:rustc-link-lib=c++");
+
     cc::Build::new()
         .warnings(true)
         .flag("-Wall")
         .flag("-Wextra")
         .flag("-g")
+        .cpp(true)
         // .cpp(true)
         .file(format!("{}hello.cpp", path))
         .file(format!("{}math.cpp", path))
