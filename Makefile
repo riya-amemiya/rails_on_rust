@@ -8,7 +8,6 @@ vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
 	g++ --version
-	mount -o remount,rw /
 	apt-get install c++
 	apt-get install unixodbc unixodbc-dev
 	dpkg -l
