@@ -2,7 +2,6 @@ extern crate cc;
 
 fn main() {
     let path = "modules/c/c_";
-
     cc::Build::new()
         .warnings(true)
         .flag("-Wall")

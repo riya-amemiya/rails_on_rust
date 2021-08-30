@@ -8,7 +8,6 @@ vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
 	g++ --version
-
 	dpkg -l
 .PHONY: rust_build
 rust_build:

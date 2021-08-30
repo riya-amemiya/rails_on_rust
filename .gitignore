@@ -50,3 +50,4 @@ secrets.yml
 app/assets/stylesheets/tailwindcss.scss
 /data/.log
 build
+modules/include/*.rs
