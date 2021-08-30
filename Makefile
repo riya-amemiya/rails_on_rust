@@ -7,7 +7,11 @@ vpath %.h $(RUST_PATH)
 vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
-	ls
+	curl https://sh.rustup.rs -sSf | sh
+	cat $HOME/.cargo/env
+	source $HOME/.cargo/env
+	cargo install bindgen
+	make bindgen
 .PHONY: rust_build
 rust_build:
 	cargo build --release
