@@ -1,3 +1,6 @@
 unixodbc
 unixodbc-dev
 build-essential
+g++
+libc-bin
+libclang-cpp9
