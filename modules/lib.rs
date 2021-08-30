@@ -21,25 +21,10 @@ fn pow_test() {
 }
 ///xとyの最大公約数
 #[no_mangle]
-pub extern "C" fn gcd(mut x: i32, mut y: i32) -> i32 {
-    if x == 0 || y == 0 {
-        return 0;
-    }
-    //最大公約数
-    let tmp: i32;
-    if y < x {
-        tmp = y;
-        y = x;
-        x = tmp;
-    }
-    /* ユークリッドの互除法 */
-    let mut r = y % x;
-    while r != 0 {
-        y = x;
-        x = r;
-        r = y % x;
-    }
-    return x;
+pub extern "C" fn gcd(x: i32, y: i32) -> i32 {
+    unsafe {
+        return c_gcd(x, y);
+    };
 }
 #[test]
 fn gcd_test() {
@@ -123,5 +108,17 @@ pub extern "C" fn random(x: i32, y: i32) -> i32 {
 pub extern "C" fn cpp() -> i32 {
     unsafe {
         return c_cpp();
+    };
+}
+#[no_mangle]
+pub extern "C" fn nCr(x: i32, y: i32) -> i32 {
+    unsafe {
+        return c_nCr(x, y);
+    };
+}
+#[no_mangle]
+pub extern "C" fn nPr(x: i32, y: i32) -> i32 {
+    unsafe {
+        return c_nPr(x, y);
     };
 }

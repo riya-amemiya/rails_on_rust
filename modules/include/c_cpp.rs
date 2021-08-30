@@ -4,3 +4,15 @@ extern "C" {
     #[link_name = "\u{1}__Z5c_cppv"]
     pub fn c_cpp() -> ::std::os::raw::c_int;
 }
+extern "C" {
+    #[link_name = "\u{1}__Z5c_nCrii"]
+    pub fn c_nCr(n: ::std::os::raw::c_int, r: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}__Z5c_gcdii"]
+    pub fn c_gcd(f: ::std::os::raw::c_int, x: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}__Z5c_nPrii"]
+    pub fn c_nPr(r: ::std::os::raw::c_int, n: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
