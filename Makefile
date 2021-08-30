@@ -9,6 +9,7 @@ vpath %.hpp $(RUST_PATH)
 cpp:
 	g++ --version
 	apt-cache search c++
+	dpkg -l
 .PHONY: rust_build
 rust_build:
 	cargo build --release
