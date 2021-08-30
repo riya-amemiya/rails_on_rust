@@ -3,7 +3,7 @@
 //! プログラミング言語の壁を超えろ
 mod include;
 mod os;
-use include::{c_hello::*, c_math::*, c_random::*};
+use include::{c_cpp::*, c_hello::*, c_math::*, c_random::*};
 use libc::c_char;
 #[no_mangle]
 pub extern "C" fn hello() -> i32 {
@@ -21,25 +21,10 @@ fn pow_test() {
 }
 ///xとyの最大公約数
 #[no_mangle]
-pub extern "C" fn gcd(mut x: i32, mut y: i32) -> i32 {
-    if x == 0 || y == 0 {
-        return 0;
-    }
-    //最大公約数
-    let tmp: i32;
-    if y < x {
-        tmp = y;
-        y = x;
-        x = tmp;
-    }
-    /* ユークリッドの互除法 */
-    let mut r = y % x;
-    while r != 0 {
-        y = x;
-        x = r;
-        r = y % x;
-    }
-    return x;
+pub extern "C" fn gcd(x: i32, y: i32) -> i32 {
+    unsafe {
+        return c_gcd(x, y);
+    };
 }
 #[test]
 fn gcd_test() {
@@ -112,10 +97,28 @@ pub extern "C" fn math(x: i32, y: i32, z: i32) -> i32 {
 #[test]
 #[ignore]
 fn math_test() {}
-
+///x(最大),y(最小)の範囲の乱数
 #[no_mangle]
 pub extern "C" fn random(x: i32, y: i32) -> i32 {
     unsafe {
         return c_random(x, y);
+    };
+}
+#[no_mangle]
+pub extern "C" fn cpp() -> i32 {
+    unsafe {
+        return c_cpp();
+    };
+}
+#[no_mangle]
+pub extern "C" fn nCr(x: i32, y: i32) -> i32 {
+    unsafe {
+        return c_nCr(x, y);
+    };
+}
+#[no_mangle]
+pub extern "C" fn nPr(x: i32, y: i32) -> i32 {
+    unsafe {
+        return c_nPr(x, y);
     };
 }

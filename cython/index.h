@@ -18,7 +18,7 @@
   #define DL_IMPORT(_T) _T
 #endif
 
-__PYX_EXTERN_C PyObject *c_pow(int, int __pyx_skip_dispatch);
+__PYX_EXTERN_C int c_pow(int, int __pyx_skip_dispatch);
 __PYX_EXTERN_C int c_add(int, int __pyx_skip_dispatch);
 
 #endif /* !__PYX_HAVE_API__python_modules */

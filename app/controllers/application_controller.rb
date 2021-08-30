@@ -16,6 +16,7 @@ module Rust
   attach_function :gcd, [:int32, :int32], :int32
   attach_function :lcm, [:int32, :int32], :int32
   attach_function :k, [:int32], :int32
+  attach_function :cpp, [], :int32
 end
 
 class ApplicationController < ActionController::Base
