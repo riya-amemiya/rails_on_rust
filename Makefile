@@ -7,7 +7,9 @@ vpath %.h $(RUST_PATH)
 vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
-	g++ --version
+	curl https://sh.rustup.rs -sSf | sh
+	cargo install bindgen
+	make bindgen
 	dpkg -l
 .PHONY: rust_build
 rust_build:
