@@ -2,10 +2,11 @@ use std::process::Command;
 extern crate cc;
 fn main() {
     let path = "modules/c/c_";
-    let _ = Command::new("make")
+    let log = Command::new("make")
         .arg("bindgen")
         .output()
         .expect("failed to execute process");
+    println!("log:{:?}", log);
     cc::Build::new()
         .warnings(true)
         .flag("-Wall")
