@@ -8,7 +8,7 @@ vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
 	g++ --version
-	yum search libc++
+	apt-get install c++
 .PHONY: rust_build
 rust_build:
 	cargo build --release
