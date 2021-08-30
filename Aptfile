@@ -4,3 +4,4 @@ build-essential
 g++
 libc-bin
 libclang-cpp9
+libc++
