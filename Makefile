@@ -10,12 +10,15 @@ cpp:
 	dpkg -l
 .PHONY: rust_build
 rust_build:
-	cargo build --release
+	cargo build --release -v
 
 .PHONY: build
 build:
 	make -C app/javascript/wasm build
 	pwd
+	make rust_build
+	rm modules/include/*.rs
+	make bindgen
 	make rust_build
 .PHONY: python_build
 
