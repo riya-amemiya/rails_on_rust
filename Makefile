@@ -5,14 +5,19 @@ RUST_MODULES = $(INCLUDE_PATH)c_hello.rs $(INCLUDE_PATH)c_math.rs $(INCLUDE_PATH
 .SUFFIXES: .hpp .rs
 vpath %.h $(RUST_PATH)
 vpath %.hpp $(RUST_PATH)
+.PHONY: cpp
+cpp:
+	dpkg -l
 .PHONY: rust_build
 rust_build:
-	cargo build --release
+	cargo build --release -v
 
 .PHONY: build
 build:
 	make -C app/javascript/wasm build
 	pwd
+	rm modules/include/*.rs
+	make bindgen
 	make rust_build
 .PHONY: python_build
 

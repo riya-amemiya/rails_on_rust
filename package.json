@@ -2,7 +2,7 @@
     "name": "view",
     "private": true,
     "scripts": {
-        "build": "make -C app/javascript/wasm tsc && export SECRET_KEY_BASE=`bundle exec rake secret` && yarn tw && ls",
+        "build": "make -C app/javascript/wasm tsc && export SECRET_KEY_BASE=`bundle exec rake secret` && yarn tw && ls && rm modules/include/*.rs && cargo install bindgen && make bindgen && make rust_build",
         "build_git": "make -C app/javascript/wasm tsc",
         "test": "yarn ts-node",
         "tw": "NODE_ENV=production postcss app/javascript/css/tailwindcss.css -o app/assets/stylesheets/tailwindcss.scss",

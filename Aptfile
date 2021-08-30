@@ -1,0 +1,12 @@
+unixodbc
+unixodbc-dev
+build-essential
+g++
+libc-bin
+libclang-cpp9
+cpp
+libstdc++6
+libcc1-0
+clang
+llvm-dev
+libclang-dev
