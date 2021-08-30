@@ -7,7 +7,7 @@ vpath %.h $(RUST_PATH)
 vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
 	cargo install bindgen
 	make bindgen
 	dpkg -l
