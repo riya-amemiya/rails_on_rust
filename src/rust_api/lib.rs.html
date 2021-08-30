@@ -121,13 +121,16 @@
 <span id="119">119</span>
 <span id="120">120</span>
 <span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
 </pre><pre class="rust">
 <span class="doccomment">//! all_programming_net</span>
 <span class="doccomment">//! # Document</span>
 <span class="doccomment">//! プログラミング言語の壁を超えろ</span>
 <span class="kw">mod</span> <span class="ident">include</span>;
 <span class="kw">mod</span> <span class="ident">os</span>;
-<span class="kw">use</span> <span class="ident">include</span>::{<span class="ident">c_hello</span>::<span class="kw-2">*</span>, <span class="ident">c_math</span>::<span class="kw-2">*</span>, <span class="ident">c_random</span>::<span class="kw-2">*</span>};
+<span class="kw">use</span> <span class="ident">include</span>::{<span class="ident">c_cpp</span>::<span class="kw-2">*</span>, <span class="ident">c_hello</span>::<span class="kw-2">*</span>, <span class="ident">c_math</span>::<span class="kw-2">*</span>, <span class="ident">c_random</span>::<span class="kw-2">*</span>};
 <span class="kw">use</span> <span class="ident">libc::c_char</span>;
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">hello</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
@@ -145,25 +148,10 @@
 }
 <span class="doccomment">///xとyの最大公約数</span>
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
-<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">gcd</span>(<span class="kw-2">mut</span> <span class="ident">x</span>: <span class="ident">i32</span>, <span class="kw-2">mut</span> <span class="ident">y</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
-    <span class="kw">if</span> <span class="ident">x</span> <span class="op">=</span><span class="op">=</span> <span class="number">0</span> <span class="op">|</span><span class="op">|</span> <span class="ident">y</span> <span class="op">=</span><span class="op">=</span> <span class="number">0</span> {
-        <span class="kw">return</span> <span class="number">0</span>;
-    }
-    <span class="comment">//最大公約数</span>
-    <span class="kw">let</span> <span class="ident">tmp</span>: <span class="ident">i32</span>;
-    <span class="kw">if</span> <span class="ident">y</span> <span class="op">&lt;</span> <span class="ident">x</span> {
-        <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">y</span>;
-        <span class="ident">y</span> <span class="op">=</span> <span class="ident">x</span>;
-        <span class="ident">x</span> <span class="op">=</span> <span class="ident">tmp</span>;
-    }
-    <span class="comment">/* ユークリッドの互除法 */</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">r</span> <span class="op">=</span> <span class="ident">y</span> <span class="op">%</span> <span class="ident">x</span>;
-    <span class="kw">while</span> <span class="ident">r</span> <span class="op">!</span><span class="op">=</span> <span class="number">0</span> {
-        <span class="ident">y</span> <span class="op">=</span> <span class="ident">x</span>;
-        <span class="ident">x</span> <span class="op">=</span> <span class="ident">r</span>;
-        <span class="ident">r</span> <span class="op">=</span> <span class="ident">y</span> <span class="op">%</span> <span class="ident">x</span>;
-    }
-    <span class="kw">return</span> <span class="ident">x</span>;
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">gcd</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">unsafe</span> {
+        <span class="kw">return</span> <span class="ident">c_gcd</span>(<span class="ident">x</span>, <span class="ident">y</span>);
+    };
 }
 <span class="attribute">#[<span class="ident">test</span>]</span>
 <span class="kw">fn</span> <span class="ident">gcd_test</span>() {
@@ -236,11 +224,29 @@
 <span class="attribute">#[<span class="ident">test</span>]</span>
 <span class="attribute">#[<span class="ident">ignore</span>]</span>
 <span class="kw">fn</span> <span class="ident">math_test</span>() {}
-
+<span class="doccomment">///x(最大),y(最小)の範囲の乱数</span>
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">random</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
     <span class="kw">unsafe</span> {
         <span class="kw">return</span> <span class="ident">c_random</span>(<span class="ident">x</span>, <span class="ident">y</span>);
+    };
+}
+<span class="attribute">#[<span class="ident">no_mangle</span>]</span>
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">cpp</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">unsafe</span> {
+        <span class="kw">return</span> <span class="ident">c_cpp</span>();
+    };
+}
+<span class="attribute">#[<span class="ident">no_mangle</span>]</span>
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">nCr</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">unsafe</span> {
+        <span class="kw">return</span> <span class="ident">c_nCr</span>(<span class="ident">x</span>, <span class="ident">y</span>);
+    };
+}
+<span class="attribute">#[<span class="ident">no_mangle</span>]</span>
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">nPr</span>(<span class="ident">x</span>: <span class="ident">i32</span>, <span class="ident">y</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">unsafe</span> {
+        <span class="kw">return</span> <span class="ident">c_nPr</span>(<span class="ident">x</span>, <span class="ident">y</span>);
     };
 }
 </pre></div>
