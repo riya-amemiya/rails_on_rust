@@ -7,11 +7,8 @@ vpath %.h $(RUST_PATH)
 vpath %.hpp $(RUST_PATH)
 .PHONY: cpp
 cpp:
-	curl https://sh.rustup.rs -sSf | sh
-	cat $HOME/.cargo/env
-	source $HOME/.cargo/env
-	cargo install bindgen
-	make bindgen
+	g++ --version
+	sudo apt install build-essential
 .PHONY: rust_build
 rust_build:
 	cargo build --release
