@@ -15,7 +15,7 @@ const Header = () => {
             <Main className="w-full relative" style={{ top: '0px', height }} id="header">
                 <DIV style={{ height: '100%' }}>
                     <div className="text-3xl" style={{ lineHeight: height, height: '100%' }}>
-                        Home
+                        <a href="/">Home</a>
                     </div>
                 </DIV>
             </Main>

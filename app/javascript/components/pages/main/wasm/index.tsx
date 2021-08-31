@@ -1,10 +1,8 @@
-import React, { useCallback, useState } from 'react';
-import Layout from '../../templates/Layout';
-import styled from 'styled-components';
-//import { Props } from '../../@types';
 import Button from '@material-ui/core/Button';
-import { Rust } from '../../api';
-import { FCC } from 'fcc_typescript';
+import React, { useCallback, useState } from 'react';
+import styled from 'styled-components';
+import { Rust } from '../../../api';
+import Layout from '../../../templates/Layout';
 interface DATA {
     ip: string;
 }
@@ -37,21 +35,19 @@ const IP = React.memo(() => {
         </>
     );
 });
-const Main_Index = () => {
+const Wasm_Index = () => {
     const CENTER = styled.div`
         text-align: center;
     `;
-    console.log(FCC.Maths.Random(8));
     return (
-        <Layout title="Home" language="ja" id="_Layout-main" url_name={''}>
+        <Layout title={'WASM'} url_name={'wasm'} language="ja" id="_Layout-wasm">
             <CENTER>
-                <div>自己満サイト</div>
+                <h1>WASM</h1>
                 <div>
-                    <p>RustをWebで動かしたかっただけ</p>
+                    <IP />
                 </div>
-                <IP />
             </CENTER>
         </Layout>
     );
 };
-export default Main_Index;
+export default Wasm_Index;

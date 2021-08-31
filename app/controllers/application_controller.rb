@@ -2,6 +2,9 @@ require "ffi"
 require "date"
 require "open3"
 require "os"
+require "execjs"
+js = ExecJS.compile(File.read("js/index.js"))
+puts js.call("add", 5, 5)
 $extension = "dylib"
 if Rails.env.production?
   if OS.linux?
