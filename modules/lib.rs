@@ -3,6 +3,9 @@
 //! プログラミング言語の壁を超えろ
 mod include;
 mod os;
+
+use std::ffi::{CStr, CString};
+
 use include::{c_cpp::*, c_hello::*, c_math::*, c_random::*};
 use libc::c_char;
 #[no_mangle]
@@ -121,4 +124,10 @@ pub extern "C" fn nPr(x: i32, y: i32) -> i32 {
     unsafe {
         return c_nPr(x, y);
     };
+}
+#[no_mangle]
+pub extern "C" fn DN_to_BN(x: *const c_char) -> *const c_char {
+    let n = unsafe { CStr::from_ptr(x).to_str().unwrap().to_owned() };
+    let y = CString::new(n).unwrap();
+    return y.as_ptr();
 }

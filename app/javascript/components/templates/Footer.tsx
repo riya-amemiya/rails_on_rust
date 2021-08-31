@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import React from 'react';
+import styled from 'styled-components';
 import Link from './Link';
 const Footer = () => {
     const Footer_main = styled.footer`
@@ -35,7 +35,7 @@ const Footer = () => {
                         </span>
                         ,
                         <span>
-                            <Link url="https://ja.wikipedia.org/wiki/C%E8%A8%80%E8%AA%9E">C</Link>
+                            <Link url="https://ja.wikipedia.org/wiki/C%E8%A8%80%E8%AA%9E">C/C++</Link>
                         </span>
                         ,
                         <span>

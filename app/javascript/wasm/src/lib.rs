@@ -67,3 +67,7 @@ pub async fn run(url: String) -> Result<JsValue, JsValue> {
     // Send the `Branch` struct back to JS as an `Object`.
     Ok(JsValue::from_serde(&branch_info).unwrap())
 }
+#[wasm_bindgen]
+pub fn dn_to_bn(x: String) -> String {
+    return x;
+}

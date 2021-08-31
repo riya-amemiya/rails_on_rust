@@ -31,7 +31,21 @@ header {
     top: 0px;
 }
 
-#_Layout-main {
+div[id*="_Layout"] {
     font-size: 1.25rem;
     line-height: 2.25;
+}
+
+
+/*未訪問のリンクの色*/
+
+a:link {
+    color: #0000ff;
+}
+
+
+/*訪問済みのリンクの色*/
+
+a:visited {
+    color: #ee4444;
 }

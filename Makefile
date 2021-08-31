@@ -10,6 +10,9 @@ cpp:
 	dpkg -l
 .PHONY: rust_build
 rust_build:
+	rm modules/include/*.rs
+	cargo install bindgen
+	make bindgen
 	cargo build --release -v
 
 .PHONY: build

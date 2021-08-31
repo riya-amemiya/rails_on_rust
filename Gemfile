@@ -64,6 +64,8 @@ group :production do
 end
 gem "dotenv-rails"
 gem "heroku_secrets", github: "alexpeattie/heroku_secrets"
-gem 'paperclip', '3.0.4'
+gem "paperclip", "3.0.4"
 gem "tailwindcss-rails"
 gem "os"
+gem "execjs"
+gem "mini_racer"
