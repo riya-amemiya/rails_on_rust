@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["cpp",""],["fact","xからyまでの階乗"],["gcd","xとyの最大公約数"],["hello",""],["k","ケルビン温度"],["lcm","xとyの最小公倍数"],["math",""],["nCr",""],["nPr",""],["os_name","os判定"],["pow","xの二乗"],["quotient_not_surplus","xとyの割り算の解(あまりなし)"],["random","x(最大),y(最小)の範囲の乱数"]]});
+initSidebarItems({"fn":[["DN_to_BN",""],["cpp",""],["fact","xからyまでの階乗"],["gcd","xとyの最大公約数"],["hello",""],["k","ケルビン温度"],["lcm","xとyの最小公倍数"],["math",""],["nCr",""],["nPr",""],["os_name","os判定"],["pow","xの二乗"],["quotient_not_surplus","xとyの割り算の解(あまりなし)"],["random","x(最大),y(最小)の範囲の乱数"]]});
